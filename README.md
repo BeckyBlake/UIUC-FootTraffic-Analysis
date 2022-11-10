@@ -29,12 +29,13 @@ Becky Blake ryblake2
 Armani Chien armanic2
 
 
-
 ## Leading Question 
 
 We want to determine foot traffic between locations for the passing periods. With the added benefit of being able to identify where certain groups of people are and avoid them (ahem CS majors).
 
 Given two datasets, one of course catalog and one of disjointed sets of classes that a student in a major would take. We want to try and find out the foot traffic between different buildings on campus. Each building would be a node and edges would represent foottraffic, the nodes will only connect if certain criteron are met. Our group is hoping to visualize and understand the patterns in foot traffic in U of I students.
+
+The exact algorithms we are using are BFS, Dijkastra's, and A* search.
 
 ## Dataset Acquisition
 
