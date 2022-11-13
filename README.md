@@ -28,14 +28,13 @@ Cain Gonzalez dcg3
 Becky Blake ryblake2
 Armani Chien armanic2
 
-
 ## Leading Question 
 
 We want to determine foot traffic between locations for the passing periods. With the added benefit of being able to identify where certain groups of people are and avoid them (ahem CS majors).
 
 Given two datasets, one of course catalog and one of disjointed sets of classes that a student in a major would take. We want to try and find out the foot traffic between different buildings on campus. Each building would be a node and edges would represent foottraffic, the nodes will only connect if certain criteron are met. Our group is hoping to visualize and understand the patterns in foot traffic in U of I students.
 
-The exact algorithms we are using are BFS, Dijkastra's, and A* search.
+The exact algorithms we are using are BFS, Dijkstra's, and our uncovered algorithm will be the force directed graph drawing.
 
 ## Dataset Acquisition
 
@@ -66,7 +65,7 @@ We will be instantiating the graph using class location as nodes, and increase t
 # Function Outputs
 We will store the expected output for our algorithm in a map, we will have location connections as keys, and the foot traffic as values. The larger the foot traffic the higher the value. This map would represent our graph of foottraffic.
 
-After we have the foottraffic values, we will then BFS through the nodes to find which node has the most connections and therefore understand through our project which locations are most popular during the passing period. Also, we will Dijkstra through the nodes to find the path that could allow us to avoid certain groups of people.
+After we have the foottraffic values, we will then BFS through the nodes to find which node has the most connections and therefore understand through our project which locations are most popular during the passing period. Also, we will Dijkstra through the nodes to find the path that could allow us to avoid certain groups of people by using it in tandem with the edge weights of foottraffic. Then we will visualize the classes with the most foottraffic with a force directed graph drawing placing the ones with the most connections at the center of the graph and least connections on the edge. This will show us pockets of groups of classes that have lots of foottraffic between each other but not much overlap with other groups (eg. architechture clasess & cs classes)
 
 # Function Efficicency
 We will first be instantiating the graph and it will take O(n^2) time because we will have to check every node's connection to every other node's connection to determine the edge value.
