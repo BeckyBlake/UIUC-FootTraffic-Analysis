@@ -6,3 +6,8 @@ for each distinct class and location:
     create a node for that class and location
     includes:
         vector<Node> neighbors
+
+
+Dataset: https://discovery.cs.illinois.edu/dataset/course-catalog/
+
+💅💅💅💅💅💅💅💅💅
