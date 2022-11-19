@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /workspaces/CS225FinalProject/cs225-project
+=======
+# Install script for directory: /workspaces/Desktop/225/cs225-project
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +48,13 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+<<<<<<< HEAD
   include("/workspaces/CS225FinalProject/cs225-project/build/lib/cmake_install.cmake")
   include("/workspaces/CS225FinalProject/cs225-project/build/src/cmake_install.cmake")
+=======
+  include("/workspaces/Desktop/225/cs225-project/build/lib/cmake_install.cmake")
+  include("/workspaces/Desktop/225/cs225-project/build/src/cmake_install.cmake")
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 endif()
 
@@ -57,5 +66,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/workspaces/CS225FinalProject/cs225-project/build/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/workspaces/Desktop/225/cs225-project/build/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

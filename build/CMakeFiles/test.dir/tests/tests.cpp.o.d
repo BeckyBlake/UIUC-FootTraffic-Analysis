@@ -1,4 +1,5 @@
 CMakeFiles/test.dir/tests/tests.cpp.o: \
+<<<<<<< HEAD
   /workspaces/CS225FinalProject/cs225-project/tests/tests.cpp \
   /usr/include/catch2/catch_test_macros.hpp \
   /usr/include/catch2/internal/catch_test_macro_impl.hpp \
@@ -280,3 +281,6 @@ CMakeFiles/test.dir/tests/tests.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_local_iterator.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_local_iterator.tcc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/pstl/execution_defs.h
+=======
+  /workspaces/Desktop/225/cs225-project/tests/tests.cpp
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79

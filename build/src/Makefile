@@ -57,10 +57,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /workspaces/CS225FinalProject/cs225-project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/CS225FinalProject/cs225-project/build
+=======
+CMAKE_SOURCE_DIR = /workspaces/Desktop/225/cs225-project
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /workspaces/Desktop/225/cs225-project/build
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +94,24 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles /workspaces/CS225FinalProject/cs225-project/build/src//CMakeFiles/progress.marks
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles 0
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Desktop/225/cs225-project/build/CMakeFiles /workspaces/Desktop/225/cs225-project/build/src//CMakeFiles/progress.marks
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Desktop/225/cs225-project/build/CMakeFiles 0
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : all
 
 # The main clean target
 clean:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : clean
 
 # The main clean target
@@ -103,23 +120,40 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/Desktop/225/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
+	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/src.dir/rule:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : src/CMakeFiles/src.dir/rule
 
 # Convenience name for target.
@@ -128,7 +162,11 @@ src: src/CMakeFiles/src.dir/rule
 
 # fast build rule for target.
 src/fast:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : src/fast
 
 disjointSets.o: disjointSets.cpp.o
@@ -136,7 +174,11 @@ disjointSets.o: disjointSets.cpp.o
 
 # target to build an object file
 disjointSets.cpp.o:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/disjointSets.cpp.o
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/disjointSets.cpp.o
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : disjointSets.cpp.o
 
 disjointSets.i: disjointSets.cpp.i
@@ -144,7 +186,11 @@ disjointSets.i: disjointSets.cpp.i
 
 # target to preprocess a source file
 disjointSets.cpp.i:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/disjointSets.cpp.i
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/disjointSets.cpp.i
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : disjointSets.cpp.i
 
 disjointSets.s: disjointSets.cpp.s
@@ -152,7 +198,11 @@ disjointSets.s: disjointSets.cpp.s
 
 # target to generate assembly for a file
 disjointSets.cpp.s:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/disjointSets.cpp.s
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/disjointSets.cpp.s
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : disjointSets.cpp.s
 
 filereader.o: filereader.cpp.o
@@ -160,7 +210,11 @@ filereader.o: filereader.cpp.o
 
 # target to build an object file
 filereader.cpp.o:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/filereader.cpp.o
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/filereader.cpp.o
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : filereader.cpp.o
 
 filereader.i: filereader.cpp.i
@@ -168,7 +222,11 @@ filereader.i: filereader.cpp.i
 
 # target to preprocess a source file
 filereader.cpp.i:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/filereader.cpp.i
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/filereader.cpp.i
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : filereader.cpp.i
 
 filereader.s: filereader.cpp.s
@@ -176,7 +234,11 @@ filereader.s: filereader.cpp.s
 
 # target to generate assembly for a file
 filereader.cpp.s:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/filereader.cpp.s
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/filereader.cpp.s
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : filereader.cpp.s
 
 # Help Target
@@ -205,7 +267,12 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+=======
+	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/Desktop/225/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
+	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cmake_check_build_system
 

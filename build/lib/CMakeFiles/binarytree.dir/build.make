@@ -53,10 +53,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /workspaces/CS225FinalProject/cs225-project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/CS225FinalProject/cs225-project/build
+=======
+CMAKE_SOURCE_DIR = /workspaces/Desktop/225/cs225-project
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /workspaces/Desktop/225/cs225-project/build
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Include any dependencies generated for this target.
 include lib/CMakeFiles/binarytree.dir/depend.make
@@ -72,6 +79,7 @@ include lib/CMakeFiles/binarytree.dir/flags.make
 lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o: lib/CMakeFiles/binarytree.dir/flags.make
 lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o: ../lib/binarytree/coloredout.cpp
 lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o: lib/CMakeFiles/binarytree.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o -MF CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o.d -o CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o -c /workspaces/CS225FinalProject/cs225-project/lib/binarytree/coloredout.cpp
 
@@ -82,6 +90,18 @@ lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.i: cmake_force
 lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225FinalProject/cs225-project/lib/binarytree/coloredout.cpp -o CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o"
+	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o -MF CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o.d -o CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o -c /workspaces/Desktop/225/cs225-project/lib/binarytree/coloredout.cpp
+
+lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.i"
+	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Desktop/225/cs225-project/lib/binarytree/coloredout.cpp > CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.i
+
+lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s"
+	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Desktop/225/cs225-project/lib/binarytree/coloredout.cpp -o CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Object files for target binarytree
 binarytree_OBJECTS = \
@@ -93,19 +113,33 @@ binarytree_EXTERNAL_OBJECTS =
 lib/libbinarytree.a: lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o
 lib/libbinarytree.a: lib/CMakeFiles/binarytree.dir/build.make
 lib/libbinarytree.a: lib/CMakeFiles/binarytree.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libbinarytree.a"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/binarytree.dir/cmake_clean_target.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/binarytree.dir/link.txt --verbose=$(VERBOSE)
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libbinarytree.a"
+	cd /workspaces/Desktop/225/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/binarytree.dir/cmake_clean_target.cmake
+	cd /workspaces/Desktop/225/cs225-project/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/binarytree.dir/link.txt --verbose=$(VERBOSE)
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Rule to build all files generated by this target.
 lib/CMakeFiles/binarytree.dir/build: lib/libbinarytree.a
 .PHONY : lib/CMakeFiles/binarytree.dir/build
 
 lib/CMakeFiles/binarytree.dir/clean:
+<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/binarytree.dir/cmake_clean.cmake
 .PHONY : lib/CMakeFiles/binarytree.dir/clean
 
 lib/CMakeFiles/binarytree.dir/depend:
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/CS225FinalProject/cs225-project /workspaces/CS225FinalProject/cs225-project/lib /workspaces/CS225FinalProject/cs225-project/build /workspaces/CS225FinalProject/cs225-project/build/lib /workspaces/CS225FinalProject/cs225-project/build/lib/CMakeFiles/binarytree.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /workspaces/Desktop/225/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/binarytree.dir/cmake_clean.cmake
+.PHONY : lib/CMakeFiles/binarytree.dir/clean
+
+lib/CMakeFiles/binarytree.dir/depend:
+	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/Desktop/225/cs225-project /workspaces/Desktop/225/cs225-project/lib /workspaces/Desktop/225/cs225-project/build /workspaces/Desktop/225/cs225-project/build/lib /workspaces/Desktop/225/cs225-project/build/lib/CMakeFiles/binarytree.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lib/CMakeFiles/binarytree.dir/depend
 
