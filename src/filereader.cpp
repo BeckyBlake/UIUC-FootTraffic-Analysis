@@ -3,10 +3,10 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <iostream>
 #include <fstream>
 #include <sstream>
- 
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
 
@@ -35,32 +35,41 @@ else make it a node and add it to desired and increment
 
 FileReader::FileReader() {
     initializeLocs();
-    
+    //initializeLocs works
+
     vector<string> row;
     string line;
     string col;
-    fstream file ("course-catalog.csv", ios::in);
+    fstream file ("../course-catalog.csv", ios::in);
     //repeat this loop while there are still lines left
-    while(getline(file, line)) {
+    while(std::getline(file, line)) {
         row.clear();
         stringstream ss(line);
         //split on commas and store words in the row array
-        while(getline(ss, col, ",")) {
+        while(std::getline(ss, col, ',')) {
             row.push_back(col);
         }
+        if(row.at(0) == "SubjNum") { continue; }
         //at this point we have a whole row stored in row
         //store the number of locations in locs
         //(if it's -1 it means we don't want it)
-        int locs = classLocs[row.at(0)];
+        std::string cName = row.at(0);
+        int locs = classLocs.at(cName);
         if(locs >=0) {
             //initialize node
+            std::cout << row.at(0) << std::endl;
+            std::cout << locs << std::endl;
             Node temp;
             temp.name = row.at(0);
             temp.location = row.at(6) + " " + row.at(5);
 
             size_t DCsize = desiredClasses.size();
             //check if this name and location has not already been added
-            if(DCsize > 0 && desiredClasses.at(DCsize-1).name != temp.name 
+            if(DCsize == 0) {
+                desiredClasses.push_back(temp);
+                classLocs[temp.name]++;
+            }
+            else if(DCsize > 0 && desiredClasses.at(DCsize-1).name != temp.name 
                     && desiredClasses.at(DCsize-1).location != temp.location) {
                 //if it hasn't, add it to desiredClasses and increment classLocs
                 desiredClasses.push_back(temp);
@@ -71,18 +80,49 @@ FileReader::FileReader() {
     }
 }
 
+// void FileReader::initializeLocs() {
+//     string line;
+//     fstream file("../subjects.csv", ios::in);
+//     //repeat this loop while there are still lines left
+//     while(getline(file, line)) {
+//         //line now contains something like CS110 or something
+//         // std::cout << typeid(line).name() << std::endl;
+//         // std::cout << typeid("balls").name() << std::endl;
+//         std::string temp = line;
+//         if(std::find(targets.begin(), targets.end(), line) != targets.end()) {
+//             classLocs.insert({temp, 0});
+//         }
+//         else {
+//             classLocs.insert({temp, -1});
+//         }
+//     }
+// }
+
 void FileReader::initializeLocs() {
     string line;
-    fstream file("subjects.csv", ios::in);
+    vector<string> row;
+    string col;
+    fstream file("../course-catalog.csv", ios::in);
     //repeat this loop while there are still lines left
-    while(getline(file, line)) {
-        //line now contains something like CS110 or something
-        if(std::find(targets.begin(), targets.end(), line) != targets.end()) {
-            classLocs.insert({line, 0});
+    while(std::getline(file, line)) {
+        row.clear();
+        stringstream ss(line);
+        //split on commas and store words in the row array
+        while(std::getline(ss, col, ',')) {
+            row.push_back(col);
+        }
+        if(row.at(0) == "SubjNum") { continue; }
+        //at this point we have a whole row stored in row
+        //store the number of locations in locs
+        //(if it's -1 it means we don't want it)
+        std::string cName = row.at(0);
+        if(std::find(targets.begin(), targets.end(), cName) != targets.end()) {
+            classLocs.insert({cName, 0});
         }
         else {
-            classLocs.insert({line, -1});
+            classLocs.insert({cName, -1});
         }
+
     }
 }
 
