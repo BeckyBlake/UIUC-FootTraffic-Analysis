@@ -57,17 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /workspaces/CS225FinalProject/cs225-project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/CS225FinalProject/cs225-project/build
-=======
-CMAKE_SOURCE_DIR = /workspaces/Desktop/225/cs225-project
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/Desktop/225/cs225-project/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,15 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles /workspaces/CS225FinalProject/cs225-project/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Desktop/225/cs225-project/build/CMakeFiles /workspaces/Desktop/225/cs225-project/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Desktop/225/cs225-project/build/CMakeFiles 0
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : all
 
 # The main clean target
@@ -126,11 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -P /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
-=======
-	$(CMAKE_COMMAND) -P /workspaces/Desktop/225/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -291,11 +274,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-<<<<<<< HEAD
 	$(CMAKE_COMMAND) -P /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
-=======
-	$(CMAKE_COMMAND) -P /workspaces/Desktop/225/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

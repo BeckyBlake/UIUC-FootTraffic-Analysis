@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /workspaces/CS225FinalProject/cs225-project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/CS225FinalProject/cs225-project/build
-=======
-CMAKE_SOURCE_DIR = /workspaces/Desktop/225/cs225-project
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/Desktop/225/cs225-project/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Include any dependencies generated for this target.
 include lib/CMakeFiles/cs225.dir/depend.make
@@ -79,7 +72,6 @@ include lib/CMakeFiles/cs225.dir/flags.make
 lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o: lib/CMakeFiles/cs225.dir/flags.make
 lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o: ../lib/cs225/HSLAPixel.cpp
 lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o: lib/CMakeFiles/cs225.dir/compiler_depend.ts
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -MF CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o.d -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspaces/CS225FinalProject/cs225-project/lib/cs225/HSLAPixel.cpp
 
@@ -90,23 +82,10 @@ lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.i: cmake_force
 lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225FinalProject/cs225-project/lib/cs225/HSLAPixel.cpp -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -MF CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o.d -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspaces/Desktop/225/cs225-project/lib/cs225/HSLAPixel.cpp
-
-lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.i"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Desktop/225/cs225-project/lib/cs225/HSLAPixel.cpp > CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.i
-
-lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Desktop/225/cs225-project/lib/cs225/HSLAPixel.cpp -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o: lib/CMakeFiles/cs225.dir/flags.make
 lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o: ../lib/cs225/PNG.cpp
 lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o: lib/CMakeFiles/cs225.dir/compiler_depend.ts
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o -MF CMakeFiles/cs225.dir/cs225/PNG.cpp.o.d -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspaces/CS225FinalProject/cs225-project/lib/cs225/PNG.cpp
 
@@ -117,18 +96,6 @@ lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.i: cmake_force
 lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs225.dir/cs225/PNG.cpp.s"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225FinalProject/cs225-project/lib/cs225/PNG.cpp -o CMakeFiles/cs225.dir/cs225/PNG.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o -MF CMakeFiles/cs225.dir/cs225/PNG.cpp.o.d -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspaces/Desktop/225/cs225-project/lib/cs225/PNG.cpp
-
-lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cs225.dir/cs225/PNG.cpp.i"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Desktop/225/cs225-project/lib/cs225/PNG.cpp > CMakeFiles/cs225.dir/cs225/PNG.cpp.i
-
-lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cs225.dir/cs225/PNG.cpp.s"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Desktop/225/cs225-project/lib/cs225/PNG.cpp -o CMakeFiles/cs225.dir/cs225/PNG.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Object files for target cs225
 cs225_OBJECTS = \
@@ -142,33 +109,19 @@ lib/libcs225.a: lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o
 lib/libcs225.a: lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o
 lib/libcs225.a: lib/CMakeFiles/cs225.dir/build.make
 lib/libcs225.a: lib/CMakeFiles/cs225.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcs225.a"
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/cs225.dir/cmake_clean_target.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cs225.dir/link.txt --verbose=$(VERBOSE)
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libcs225.a"
-	cd /workspaces/Desktop/225/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/cs225.dir/cmake_clean_target.cmake
-	cd /workspaces/Desktop/225/cs225-project/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cs225.dir/link.txt --verbose=$(VERBOSE)
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Rule to build all files generated by this target.
 lib/CMakeFiles/cs225.dir/build: lib/libcs225.a
 .PHONY : lib/CMakeFiles/cs225.dir/build
 
 lib/CMakeFiles/cs225.dir/clean:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/cs225.dir/cmake_clean.cmake
 .PHONY : lib/CMakeFiles/cs225.dir/clean
 
 lib/CMakeFiles/cs225.dir/depend:
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/CS225FinalProject/cs225-project /workspaces/CS225FinalProject/cs225-project/lib /workspaces/CS225FinalProject/cs225-project/build /workspaces/CS225FinalProject/cs225-project/build/lib /workspaces/CS225FinalProject/cs225-project/build/lib/CMakeFiles/cs225.dir/DependInfo.cmake --color=$(COLOR)
-=======
-	cd /workspaces/Desktop/225/cs225-project/build/lib && $(CMAKE_COMMAND) -P CMakeFiles/cs225.dir/cmake_clean.cmake
-.PHONY : lib/CMakeFiles/cs225.dir/clean
-
-lib/CMakeFiles/cs225.dir/depend:
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/Desktop/225/cs225-project /workspaces/Desktop/225/cs225-project/lib /workspaces/Desktop/225/cs225-project/build /workspaces/Desktop/225/cs225-project/build/lib /workspaces/Desktop/225/cs225-project/build/lib/CMakeFiles/cs225.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lib/CMakeFiles/cs225.dir/depend
 

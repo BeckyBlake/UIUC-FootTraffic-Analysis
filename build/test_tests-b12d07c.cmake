@@ -1,7 +1,0 @@
-add_test( file_reader_constructor_desired /workspaces/CS225FinalProject/cs225-project/build/test file_reader_constructor_desired  )
-set_tests_properties( file_reader_constructor_desired PROPERTIES WORKING_DIRECTORY /workspaces/CS225FinalProject/cs225-project/build)
-add_test( file_reader_constructor_undesired /workspaces/CS225FinalProject/cs225-project/build/test file_reader_constructor_undesired  )
-set_tests_properties( file_reader_constructor_undesired PROPERTIES WORKING_DIRECTORY /workspaces/CS225FinalProject/cs225-project/build)
-add_test( [==[disjoint set size]==] /workspaces/CS225FinalProject/cs225-project/build/test [==[disjoint set size]==]  )
-set_tests_properties( [==[disjoint set size]==] PROPERTIES WORKING_DIRECTORY /workspaces/CS225FinalProject/cs225-project/build)
-set( test_TESTS file_reader_constructor_desired file_reader_constructor_undesired [==[disjoint set size]==])

@@ -53,17 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /workspaces/CS225FinalProject/cs225-project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/CS225FinalProject/cs225-project/build
-=======
-CMAKE_SOURCE_DIR = /workspaces/Desktop/225/cs225-project
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/Desktop/225/cs225-project/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/src.dir/depend.make
@@ -79,7 +72,6 @@ include src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/disjointSets.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/disjointSets.cpp.o: ../src/disjointSets.cpp
 src/CMakeFiles/src.dir/disjointSets.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/disjointSets.cpp.o"
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/disjointSets.cpp.o -MF CMakeFiles/src.dir/disjointSets.cpp.o.d -o CMakeFiles/src.dir/disjointSets.cpp.o -c /workspaces/CS225FinalProject/cs225-project/src/disjointSets.cpp
 
@@ -90,23 +82,10 @@ src/CMakeFiles/src.dir/disjointSets.cpp.i: cmake_force
 src/CMakeFiles/src.dir/disjointSets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/disjointSets.cpp.s"
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225FinalProject/cs225-project/src/disjointSets.cpp -o CMakeFiles/src.dir/disjointSets.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/src.dir/disjointSets.cpp.o"
-	cd /workspaces/Desktop/225/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/disjointSets.cpp.o -MF CMakeFiles/src.dir/disjointSets.cpp.o.d -o CMakeFiles/src.dir/disjointSets.cpp.o -c /workspaces/Desktop/225/cs225-project/src/disjointSets.cpp
-
-src/CMakeFiles/src.dir/disjointSets.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/disjointSets.cpp.i"
-	cd /workspaces/Desktop/225/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Desktop/225/cs225-project/src/disjointSets.cpp > CMakeFiles/src.dir/disjointSets.cpp.i
-
-src/CMakeFiles/src.dir/disjointSets.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/disjointSets.cpp.s"
-	cd /workspaces/Desktop/225/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Desktop/225/cs225-project/src/disjointSets.cpp -o CMakeFiles/src.dir/disjointSets.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 src/CMakeFiles/src.dir/filereader.cpp.o: src/CMakeFiles/src.dir/flags.make
 src/CMakeFiles/src.dir/filereader.cpp.o: ../src/filereader.cpp
 src/CMakeFiles/src.dir/filereader.cpp.o: src/CMakeFiles/src.dir/compiler_depend.ts
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/filereader.cpp.o"
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/filereader.cpp.o -MF CMakeFiles/src.dir/filereader.cpp.o.d -o CMakeFiles/src.dir/filereader.cpp.o -c /workspaces/CS225FinalProject/cs225-project/src/filereader.cpp
 
@@ -117,18 +96,6 @@ src/CMakeFiles/src.dir/filereader.cpp.i: cmake_force
 src/CMakeFiles/src.dir/filereader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/filereader.cpp.s"
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/CS225FinalProject/cs225-project/src/filereader.cpp -o CMakeFiles/src.dir/filereader.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/src.dir/filereader.cpp.o"
-	cd /workspaces/Desktop/225/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/src.dir/filereader.cpp.o -MF CMakeFiles/src.dir/filereader.cpp.o.d -o CMakeFiles/src.dir/filereader.cpp.o -c /workspaces/Desktop/225/cs225-project/src/filereader.cpp
-
-src/CMakeFiles/src.dir/filereader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/filereader.cpp.i"
-	cd /workspaces/Desktop/225/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/Desktop/225/cs225-project/src/filereader.cpp > CMakeFiles/src.dir/filereader.cpp.i
-
-src/CMakeFiles/src.dir/filereader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/filereader.cpp.s"
-	cd /workspaces/Desktop/225/cs225-project/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/Desktop/225/cs225-project/src/filereader.cpp -o CMakeFiles/src.dir/filereader.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Object files for target src
 src_OBJECTS = \
@@ -142,33 +109,19 @@ src/libsrc.a: src/CMakeFiles/src.dir/disjointSets.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/filereader.cpp.o
 src/libsrc.a: src/CMakeFiles/src.dir/build.make
 src/libsrc.a: src/CMakeFiles/src.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/CS225FinalProject/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsrc.a"
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/Desktop/225/cs225-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsrc.a"
-	cd /workspaces/Desktop/225/cs225-project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean_target.cmake
-	cd /workspaces/Desktop/225/cs225-project/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/src.dir/link.txt --verbose=$(VERBOSE)
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/src.dir/build: src/libsrc.a
 .PHONY : src/CMakeFiles/src.dir/build
 
 src/CMakeFiles/src.dir/clean:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/src.dir/clean
 
 src/CMakeFiles/src.dir/depend:
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/CS225FinalProject/cs225-project /workspaces/CS225FinalProject/cs225-project/src /workspaces/CS225FinalProject/cs225-project/build /workspaces/CS225FinalProject/cs225-project/build/src /workspaces/CS225FinalProject/cs225-project/build/src/CMakeFiles/src.dir/DependInfo.cmake --color=$(COLOR)
-=======
-	cd /workspaces/Desktop/225/cs225-project/build/src && $(CMAKE_COMMAND) -P CMakeFiles/src.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/src.dir/clean
-
-src/CMakeFiles/src.dir/depend:
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/Desktop/225/cs225-project /workspaces/Desktop/225/cs225-project/src /workspaces/Desktop/225/cs225-project/build /workspaces/Desktop/225/cs225-project/build/src /workspaces/Desktop/225/cs225-project/build/src/CMakeFiles/src.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : src/CMakeFiles/src.dir/depend
 

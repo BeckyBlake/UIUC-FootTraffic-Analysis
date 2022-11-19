@@ -57,17 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /workspaces/CS225FinalProject/cs225-project
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/CS225FinalProject/cs225-project/build
-=======
-CMAKE_SOURCE_DIR = /workspaces/Desktop/225/cs225-project
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/Desktop/225/cs225-project/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,24 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles /workspaces/CS225FinalProject/cs225-project/build/lib//CMakeFiles/progress.marks
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles 0
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Desktop/225/cs225-project/build/CMakeFiles /workspaces/Desktop/225/cs225-project/build/lib//CMakeFiles/progress.marks
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/Desktop/225/cs225-project/build/CMakeFiles 0
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : all
 
 # The main clean target
 clean:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : clean
 
 # The main clean target
@@ -120,40 +103,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/Desktop/225/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : depend
 
 # Convenience name for target.
 lib/CMakeFiles/lodepng.dir/rule:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/lodepng.dir/rule
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/lodepng.dir/rule
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lib/CMakeFiles/lodepng.dir/rule
 
 # Convenience name for target.
@@ -162,20 +128,12 @@ lodepng: lib/CMakeFiles/lodepng.dir/rule
 
 # fast build rule for target.
 lodepng/fast:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/build
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lodepng/fast
 
 # Convenience name for target.
 lib/CMakeFiles/binarytree.dir/rule:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/binarytree.dir/rule
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/binarytree.dir/rule
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lib/CMakeFiles/binarytree.dir/rule
 
 # Convenience name for target.
@@ -184,20 +142,12 @@ binarytree: lib/CMakeFiles/binarytree.dir/rule
 
 # fast build rule for target.
 binarytree/fast:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/build
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : binarytree/fast
 
 # Convenience name for target.
 lib/CMakeFiles/cs225.dir/rule:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/cs225.dir/rule
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/cs225.dir/rule
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lib/CMakeFiles/cs225.dir/rule
 
 # Convenience name for target.
@@ -206,11 +156,7 @@ cs225: lib/CMakeFiles/cs225.dir/rule
 
 # fast build rule for target.
 cs225/fast:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/build
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/build
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/fast
 
 binarytree/coloredout.o: binarytree/coloredout.cpp.o
@@ -218,11 +164,7 @@ binarytree/coloredout.o: binarytree/coloredout.cpp.o
 
 # target to build an object file
 binarytree/coloredout.cpp.o:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : binarytree/coloredout.cpp.o
 
 binarytree/coloredout.i: binarytree/coloredout.cpp.i
@@ -230,11 +172,7 @@ binarytree/coloredout.i: binarytree/coloredout.cpp.i
 
 # target to preprocess a source file
 binarytree/coloredout.cpp.i:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.i
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.i
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : binarytree/coloredout.cpp.i
 
 binarytree/coloredout.s: binarytree/coloredout.cpp.s
@@ -242,11 +180,7 @@ binarytree/coloredout.s: binarytree/coloredout.cpp.s
 
 # target to generate assembly for a file
 binarytree/coloredout.cpp.s:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/binarytree.dir/build.make lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : binarytree/coloredout.cpp.s
 
 cs225/HSLAPixel.o: cs225/HSLAPixel.cpp.o
@@ -254,11 +188,7 @@ cs225/HSLAPixel.o: cs225/HSLAPixel.cpp.o
 
 # target to build an object file
 cs225/HSLAPixel.cpp.o:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/HSLAPixel.cpp.o
 
 cs225/HSLAPixel.i: cs225/HSLAPixel.cpp.i
@@ -266,11 +196,7 @@ cs225/HSLAPixel.i: cs225/HSLAPixel.cpp.i
 
 # target to preprocess a source file
 cs225/HSLAPixel.cpp.i:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.i
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.i
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/HSLAPixel.cpp.i
 
 cs225/HSLAPixel.s: cs225/HSLAPixel.cpp.s
@@ -278,11 +204,7 @@ cs225/HSLAPixel.s: cs225/HSLAPixel.cpp.s
 
 # target to generate assembly for a file
 cs225/HSLAPixel.cpp.s:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/HSLAPixel.cpp.s
 
 cs225/PNG.o: cs225/PNG.cpp.o
@@ -290,11 +212,7 @@ cs225/PNG.o: cs225/PNG.cpp.o
 
 # target to build an object file
 cs225/PNG.cpp.o:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.o
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/PNG.cpp.o
 
 cs225/PNG.i: cs225/PNG.cpp.i
@@ -302,11 +220,7 @@ cs225/PNG.i: cs225/PNG.cpp.i
 
 # target to preprocess a source file
 cs225/PNG.cpp.i:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.i
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.i
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/PNG.cpp.i
 
 cs225/PNG.s: cs225/PNG.cpp.s
@@ -314,11 +228,7 @@ cs225/PNG.s: cs225/PNG.cpp.s
 
 # target to generate assembly for a file
 cs225/PNG.cpp.s:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.s
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/cs225.dir/build.make lib/CMakeFiles/cs225.dir/cs225/PNG.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cs225/PNG.cpp.s
 
 lodepng/lodepng.o: lodepng/lodepng.cpp.o
@@ -326,11 +236,7 @@ lodepng/lodepng.o: lodepng/lodepng.cpp.o
 
 # target to build an object file
 lodepng/lodepng.cpp.o:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lodepng/lodepng.cpp.o
 
 lodepng/lodepng.i: lodepng/lodepng.cpp.i
@@ -338,11 +244,7 @@ lodepng/lodepng.i: lodepng/lodepng.cpp.i
 
 # target to preprocess a source file
 lodepng/lodepng.cpp.i:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.i
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.i
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lodepng/lodepng.cpp.i
 
 lodepng/lodepng.s: lodepng/lodepng.cpp.s
@@ -350,11 +252,7 @@ lodepng/lodepng.s: lodepng/lodepng.cpp.s
 
 # target to generate assembly for a file
 lodepng/lodepng.cpp.s:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.s
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/lodepng.dir/build.make lib/CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.s
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : lodepng/lodepng.cpp.s
 
 # Help Target
@@ -391,12 +289,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-<<<<<<< HEAD
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/CS225FinalProject/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
 	cd /workspaces/CS225FinalProject/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
-=======
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -P /workspaces/Desktop/225/cs225-project/build/CMakeFiles/VerifyGlobs.cmake
-	cd /workspaces/Desktop/225/cs225-project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
->>>>>>> 174738a6c2de22d9f3f9a8d53bbe4502fc403a79
 .PHONY : cmake_check_build_system
 
