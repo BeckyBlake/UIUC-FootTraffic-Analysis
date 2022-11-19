@@ -68,16 +68,16 @@ FileReader::FileReader() {
 
             size_t DCsize = desiredClasses.size();
             //check if this name and location has not already been added
-            if(DCsize == 0) {
+            // if(DCsize == 0) {
                 desiredClasses.push_back(temp);
                 classLocs[temp.name]++;
-            }
-            else if(DCsize > 0 && desiredClasses.at(DCsize-1).name != temp.name 
-                    && desiredClasses.at(DCsize-1).location != temp.location) {
-                //if it hasn't, add it to desiredClasses and increment classLocs
-                desiredClasses.push_back(temp);
-                classLocs[temp.name]++;
-            }
+            // }
+            // else if(DCsize > 0 && desiredClasses.at(DCsize-1).name != temp.name 
+            //         && desiredClasses.at(DCsize-1).location != temp.location) {
+            //     //if it hasn't, add it to desiredClasses and increment classLocs
+            //     desiredClasses.push_back(temp);
+            //     classLocs[temp.name]++;
+            // }
         }
 
     }
