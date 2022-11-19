@@ -1,7 +1,7 @@
 src/CMakeFiles/src.dir/filereader.cpp.o: \
-  /workspaces/cs225_fp/cs225-project/src/filereader.cpp \
-  /workspaces/cs225_fp/cs225-project/src/filereader.h \
-  /workspaces/cs225_fp/cs225-project/src/node.h \
+  /workspaces/CS225FinalProject/cs225-project/src/filereader.cpp \
+  /workspaces/CS225FinalProject/cs225-project/src/filereader.h \
+  /workspaces/CS225FinalProject/cs225-project/src/node.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/string \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -166,7 +166,7 @@ src/CMakeFiles/src.dir/filereader.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_container.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_iterator.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_iterator.tcc \
-  /workspaces/cs225_fp/cs225-project/src/disjointSets.h \
+  /workspaces/CS225FinalProject/cs225-project/src/disjointSets.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/map \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tree.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h \

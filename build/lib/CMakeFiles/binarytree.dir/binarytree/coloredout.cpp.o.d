@@ -1,6 +1,6 @@
 lib/CMakeFiles/binarytree.dir/binarytree/coloredout.cpp.o: \
-  /workspaces/cs225_fp/cs225-project/lib/binarytree/coloredout.cpp \
-  /workspaces/cs225_fp/cs225-project/lib/binarytree/coloredout.h \
+  /workspaces/CS225FinalProject/cs225-project/lib/binarytree/coloredout.cpp \
+  /workspaces/CS225FinalProject/cs225-project/lib/binarytree/coloredout.h \
   /usr/include/x86_64-linux-gnu/sys/wait.h /usr/include/features.h \
   /usr/include/features-time64.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
