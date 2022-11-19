@@ -57,11 +57,14 @@ FileReader::FileReader() {
         int locs = classLocs.at(cName);
         if(locs >=0) {
             //initialize node
-            std::cout << row.at(0) << std::endl;
-            std::cout << locs << std::endl;
             Node temp;
-            temp.name = row.at(0);
-            temp.location = row.at(6) + " " + row.at(5);
+            string loc = std::string(row.at(6));
+            //YES! This line removes the endline character
+            loc.erase(std::remove(loc.begin(), loc.end(), '\r'), loc.end());
+            loc.append(std::string(" "));
+            loc.append(std::string(row.at(5)));
+            temp.name = std::string(row.at(0));
+            temp.location = loc;
 
             size_t DCsize = desiredClasses.size();
             //check if this name and location has not already been added
@@ -80,52 +83,21 @@ FileReader::FileReader() {
     }
 }
 
-// void FileReader::initializeLocs() {
-//     string line;
-//     fstream file("../subjects.csv", ios::in);
-//     //repeat this loop while there are still lines left
-//     while(getline(file, line)) {
-//         //line now contains something like CS110 or something
-//         // std::cout << typeid(line).name() << std::endl;
-//         // std::cout << typeid("balls").name() << std::endl;
-//         std::string temp = line;
-//         if(std::find(targets.begin(), targets.end(), line) != targets.end()) {
-//             classLocs.insert({temp, 0});
-//         }
-//         else {
-//             classLocs.insert({temp, -1});
-//         }
-//     }
-// }
-
 void FileReader::initializeLocs() {
     string line;
-    vector<string> row;
-    string col;
-    fstream file("../course-catalog.csv", ios::in);
+    fstream file("../subjects.csv", ios::in);
     //repeat this loop while there are still lines left
-    while(std::getline(file, line)) {
-        row.clear();
-        stringstream ss(line);
-        //split on commas and store words in the row array
-        while(std::getline(ss, col, ',')) {
-            row.push_back(col);
-        }
-        if(row.at(0) == "SubjNum") { continue; }
-        //at this point we have a whole row stored in row
-        //store the number of locations in locs
-        //(if it's -1 it means we don't want it)
-        std::string cName = row.at(0);
-        if(std::find(targets.begin(), targets.end(), cName) != targets.end()) {
-            classLocs.insert({cName, 0});
+    while(getline(file, line)) {
+        //line now contains something like CS110 or something
+        line.erase(std::remove(line.begin(), line.end(), '\r'), line.end());
+        if(std::find(targets.begin(), targets.end(), line) != targets.end()) {
+            classLocs.insert({line, 0});
         }
         else {
-            classLocs.insert({cName, -1});
+            classLocs.insert({line, -1});
         }
-
     }
 }
-
 
 vector<Node> & FileReader::getClasses() {
     return desiredClasses;
