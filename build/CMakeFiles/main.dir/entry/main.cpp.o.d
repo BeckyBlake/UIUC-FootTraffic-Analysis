@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/entry/main.cpp.o: \
-  /workspaces/cs225_fp/cs225-project/entry/main.cpp \
+  /workspaces/CS225FinalProject/cs225-project/entry/main.cpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -188,9 +188,9 @@ CMakeFiles/main.dir/entry/main.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_container.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_iterator.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/safe_iterator.tcc \
-  /workspaces/cs225_fp/cs225-project/src/disjointSets.h \
-  /workspaces/cs225_fp/cs225-project/src/filereader.h \
-  /workspaces/cs225_fp/cs225-project/src/node.h \
+  /workspaces/CS225FinalProject/cs225-project/src/disjointSets.h \
+  /workspaces/CS225FinalProject/cs225-project/src/filereader.h \
+  /workspaces/CS225FinalProject/cs225-project/src/node.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/map \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tree.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h \

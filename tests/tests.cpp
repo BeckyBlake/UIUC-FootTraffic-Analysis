@@ -1,31 +1,46 @@
-// #include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_test_macros.hpp>
 
 // #include "avltree.h"
 
-// #include <vector>
-// #include <iostream>
-// #include <sstream>
-// #include <fstream>
+#include <vector>
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include "filereader.h"
+#include "node.h"
+#include <algorithm>
 
-// using namespace std;
 
-// template<typename K, typename V>
-// void verifyTree(AVLTree<K, V> const& tree, vector<K> const& solnPreorderTraversal, vector<string> const& solnFuncCalls) {
-//     // This is based on the following assertion:
-//     // "Consider the AVL tree A. If some tree B has an in-order traversal that
-//     // produces a non-decreasing list of values and a pre-order traversal that
-//     // matches that of A, then A == B"
-//     // In this case, A is our solution tree and B is the student tree. If we
-//     // can show that those properties of B match those of A, then they must be
-//     // the same tree.
-//     vector<string> funcCalls = tree.getFunctionOrder();
-//     vector<int> preorderTraversal = tree.getPreorderTraversal();
-//     vector<int> inorderTraversal = tree.getInorderTraversal();
+using namespace std;
 
-//     REQUIRE(solnFuncCalls == funcCalls);
-//     REQUIRE(solnPreorderTraversal == preorderTraversal);
-//     REQUIRE(std::is_sorted(inorderTraversal.begin(), inorderTraversal.end()));
-// }
+// Use file reader to get a list of the possible DESIRED classes that we seek
+TEST_CASE("file_reader_constructor_desired", "[weight=10][valgrind]") {
+    FileReader fr;
+    // Desired list of classes
+    vector<string> targets{"CS128", "CS124", "PHYS211", "MATH221", "RHET105", "MATH231"};
+    for (auto node : fr.desiredClasses) {
+        // Make sure the desired classes are in targets
+        REQUIRE(std::find(targets.begin(), targets.end(), node.name) != targets.end());
+    }
+}
+
+// Use file reader to get a list of the OTHER UNDESIRED classes that we do NOT seek
+TEST_CASE("file_reader_constructor_undesired", "[weight=10][valgrind]") {
+    FileReader fr;
+    // Undesired list of classes
+    vector<string> targets{"CS128", "CS124", "PHYS211", "MATH221", "RHET105", "MATH231"};
+    for (auto node : fr.theRest) {
+        // Make sure the desired classes are NOT in our file
+        REQUIRE(std::find(targets.begin(), targets.end(), node.name) == targets.end());
+    }
+}
+
+TEST_CASE("disjoint set size", "[weight=10][valgrind]") {
+    FileReader fr;
+    // initialize disjoint set
+    fr.initializeTargets();
+    REQUIRE(fr.dset.size(0) == 6);
+}
 
 // TEST_CASE("test_find", "[weight=10][valgrind]") {
 // 	AVLTree<string, string> tree;
@@ -53,97 +68,3 @@
 //     verifyTree(tree, solnTraversal, solnFuncCalls);
 // }
 
-// TEST_CASE("test_insert_find", "[weight=10]") {
-//     AVLTree<int, int> tree;
-//     vector<int> elems = {5, 1, 8, 0, 3, 2};
-//     for (auto e : elems) {
-//         tree.insert(e, e);
-//     }
-
-//     vector<int> solnTraversal = {3, 1, 0, 2, 5, 8};
-//     vector<string> solnFuncCalls = {
-//         "rotateLeftRight",
-//         "rotateLeft",
-//         "rotateRight",
-//     };
-
-//     verifyTree(tree, solnTraversal, solnFuncCalls);
-//     for (auto e : elems) {
-//         REQUIRE(e == tree.find(e));
-//     }
-// }
-
-// TEST_CASE("test_insert_big", "[weight=10][valgrind]") {
-//     AVLTree<int, string> tree;
-//     vector<int> elems = {55, 45, 12, 34, 56, 46, 13, 35, 57, 47, 14, 36, 58, 48, 15, 37};
-//     for (auto e : elems) {
-//         tree.insert(e, "");
-//     }
-
-//     vector<int> solnTraversal = {45, 34, 13, 12, 14, 15, 36, 35, 37, 55, 47, 46, 48, 57, 56, 58};
-//     vector<string> solnFuncCalls = {
-//         "rotateRight",
-//         "rotateRightLeft",
-//         "rotateRight",
-//         "rotateLeft",
-//         "rotateLeft",
-//         "rotateLeft",
-//         "rotateLeft",
-//         "rotateLeft",
-//     };
-
-//     verifyTree(tree, solnTraversal, solnFuncCalls);
-// }
-
-// TEST_CASE("test_remove_small", "[weight=5]") {
-//     AVLTree<int, string> tree;
-//     vector<int> elems = {5, 1, 8, 0, 3, 2};
-//     for (auto e : elems) {
-//         tree.insert(e, "");
-//     }
-
-//     for (int i = 0; i < 4; i++) {
-//         tree.remove(i);
-//     }
-
-//     vector<int> solnTraversal = {5, 8};
-//     vector<string> solnFuncCalls = {
-//         "rotateLeftRight",
-//         "rotateLeft",
-//         "rotateRight",
-//         "rotateLeft",
-//     };
-
-//     verifyTree(tree, solnTraversal, solnFuncCalls);
-// }
-
-// TEST_CASE("test_remove_big", "[weight=10][valgrind]") {
-//     AVLTree<int, string> tree;
-//     vector<int> elems = {94, 87, 61, 96, 76, 92, 42, 78, 17, 11, 41, 95, 36, 26, 23, 93, 31, 3, 45, 18, 73, 24, 74, 1, 71, 82};
-//     for (auto e : elems) {
-//         tree.insert(e, "");
-//     }
-
-//     for (int r : {95, 94, 61, 76, 73, 71}) {
-//         tree.remove(r);
-//     }
-
-//     vector<int> solnTraversal = {45, 26, 17, 3, 1, 11, 23, 18, 24, 36, 31, 42, 41, 87, 78, 74, 82, 93, 92, 96};
-//     vector<string> solnFuncCalls = {
-//         "rotateRight",
-//         "rotateRight",
-//         "rotateRight",
-//         "rotateRight",
-//         "rotateRightLeft",
-//         "rotateRight",
-//         "rotateLeft",
-//         "rotateLeft",
-//         "rotateLeftRight",
-//         "rotateLeft",
-//         "rotateRight",
-//         "rotateRight",
-//         "rotateLeft",
-//     };
-
-//     verifyTree(tree, solnTraversal, solnFuncCalls);
-// }

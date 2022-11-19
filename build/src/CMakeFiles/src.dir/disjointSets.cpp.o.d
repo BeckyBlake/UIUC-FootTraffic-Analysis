@@ -1,6 +1,6 @@
 src/CMakeFiles/src.dir/disjointSets.cpp.o: \
-  /workspaces/cs225_fp/cs225-project/src/disjointSets.cpp \
-  /workspaces/cs225_fp/cs225-project/src/disjointSets.h \
+  /workspaces/CS225FinalProject/cs225-project/src/disjointSets.cpp \
+  /workspaces/CS225FinalProject/cs225-project/src/disjointSets.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/vector \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
