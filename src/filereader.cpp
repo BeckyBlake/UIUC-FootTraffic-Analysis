@@ -21,26 +21,28 @@ AAS100,Intro Asian American Studies,9:00 AM,9:50 AM,F,313,Davenport Hall
 For this implementation, we only care about class a CS major would take
 freshman year:
 CS128, CS124, PHYS211, MATH221, RHET105, MATH231
-These classes will go in desiredclasses vector and  all other classes
+These classes will go in desiredClasses vector and  all other classes
 will go in theRest vector
 
 Finally, the way we determine whether or not to make a node follows this
 algorithm:
 
-Is its value in classLocs -1 or something >=0
+Is its value in classLocs -1 or something greater than or equal to 0
 
-if(-1) do nothing
-else make it a node and add it to desired and increment
+if(-1) add it to theRest vector
+else add it to desired and increment locations
 */
-
 FileReader::FileReader() {
-    initializeLocs();
-    //initializeLocs works
-
+    //initialize isDesired 
+    initializeHelpers();
+    
+    //initialize important variables
     vector<string> row;
-    string line;
-    string col;
-    fstream file ("../course-catalog.csv", ios::in);
+    string line, col;
+    fstream file ("../cc-sorted-locations.csv", ios::in);
+    //keeps track of the location we're currently looking at
+    size_t currIndex = 0;
+
     //repeat this loop while there are still lines left
     while(std::getline(file, line)) {
         row.clear();
@@ -49,62 +51,68 @@ FileReader::FileReader() {
         while(std::getline(ss, col, ',')) {
             row.push_back(col);
         }
+        //we want to skip the first row
         if(row.at(0) == "SubjNum") { continue; }
-        //at this point we have a whole row stored in row
-        //store the number of locations in locs
-        //(if it's -1 it means we don't want it)
-        std::string cName = row.at(0);
-        int locs = classLocs.at(cName);
-        if(locs >=0) {
-            //initialize node
-            Node temp;
-            string loc = std::string(row.at(6));
-            //YES! This line removes the endline character
-            loc.erase(std::remove(loc.begin(), loc.end(), '\r'), loc.end());
-            loc.append(std::string(" "));
-            loc.append(std::string(row.at(5)));
-            temp.name = std::string(row.at(0));
-            temp.location = loc;
-
-            size_t DCsize = desiredClasses.size();
-            //check if this name and location has not already been added
-            // if(DCsize == 0) {
-                desiredClasses.push_back(temp);
-                classLocs[temp.name]++;
-            // }
-            // else if(DCsize > 0 && desiredClasses.at(DCsize-1).name != temp.name 
-            //         && desiredClasses.at(DCsize-1).location != temp.location) {
-            //     //if it hasn't, add it to desiredClasses and increment classLocs
-            //     desiredClasses.push_back(temp);
-            //     classLocs[temp.name]++;
-            // }
+        //store the name in a variable
+        string locationName = row.at(row.size()-1);
+        //get rid of the '\r' at the end of the line
+        locationName.erase(std::remove(locationName.begin(), locationName.end(), '\r'), locationName.end());
+        //store whether or not it's desired
+        int des = isDesired[row.at(0)];
+        //create a node pointer to store the node we want to alter
+        Node* node;
+        //if this if statement runs it means that we have moved onto the next location
+        if(currIndex < allLocations.size() && locationName != allLocations.at(currIndex)->location) {
+            currIndex++;
         }
+        //we have a new location, so we have to create new node
+        if(currIndex == allLocations.size()) {
+            node = new Node();
+            node->location = locationName;
+            allLocations.push_back(node);
+        }
+        //get the current location
+        node = allLocations.at(currIndex);
 
+        addClass(node, row.at(0), des);
     }
 }
 
-void FileReader::initializeLocs() {
+FileReader::~FileReader() {
+    for(Node* n : allLocations) { delete n; }
+}
+
+void FileReader::addClass(Node* node, string cName, int des) {
+    //make sure the node doesn't already contain class
+    if(node->containsClass[cName] == 0) {
+        //set it to say it contains it now
+        node->containsClass[cName] = 1;
+        //if the class we are inputting is desired, add it to DC vector
+        if(des == 1) {
+            node->desiredClasses.push_back(cName);
+        }
+        //else add it to other classes
+        else {
+            node->otherClasses.push_back(cName);
+        }
+    }
+    //if this node isn't in the desiredLocations vector yet, add it
+    if(!node->inDesVector && des == 1) {
+        desiredLocations.push_back(node);
+        node->inDesVector = true;
+    }
+}
+
+void FileReader::initializeHelpers() {
     string line;
-    fstream file("../subjects.csv", ios::in);
+    fstream file("../targets.csv", ios::in);
     //repeat this loop while there are still lines left
     while(getline(file, line)) {
         //line now contains something like CS110 or something
         line.erase(std::remove(line.begin(), line.end(), '\r'), line.end());
-        if(std::find(targets.begin(), targets.end(), line) != targets.end()) {
-            classLocs.insert({line, 0});
-        }
-        else {
-            classLocs.insert({line, -1});
-        }
+        //indicate in isDesired that we want this class
+        isDesired.insert({line, 1});
     }
-}
-
-vector<Node> & FileReader::getClasses() {
-    return desiredClasses;
-}
-
-std::map<std::string, int> & FileReader::getLocations() {
-    return classLocs;
 }
 
 void FileReader::initializeTargets() {
