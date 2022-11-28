@@ -10,7 +10,7 @@ struct Node {
     std::string name;
     //location name
     std::string location;
-    std::vector<Node> neighbors;
+    std::vector<Node*> neighbors;
     std::vector<int> weights;
     //vector of the classes in this location that we
     //care about

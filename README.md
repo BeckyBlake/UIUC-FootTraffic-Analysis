@@ -1,3 +1,20 @@
+# Location of Files
+1. **cs225-project**
+    a) build
+        build contains all of the make and cmake files in order for our project to compile and run. 
+    b) entry
+        entry contains our **main.cpp** file where we use our other programs like file reader and disjointSets to get our data and process it as well. TO BE CONTINUED SINCE WE NEED TO WORK ON MAIN AGAIN
+    c) lib
+        UNTOUCHED MAINLY USED SINCE WE COPIED DOCKER I BELIEVE(??). WILL TOUCH UPON LATER
+    d)
+
+
+
+
+
+
+
+
 # cs225_project
 # Team Contract
 
