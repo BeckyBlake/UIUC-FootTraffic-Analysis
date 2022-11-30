@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "disjointSets.h"
 #include "filereader.h"
 #include "node.h"
@@ -15,7 +16,7 @@ int main() {
 
     dset.addelements(5);
 
-    FileReader fr;
+    FileReader fr("../targets.csv");
 
     // Read the file to get the CS classes
     //vector<Node> desired = fr.getClasses();   
@@ -29,10 +30,12 @@ int main() {
         std::cout << '\n';
     }
 
+    std::cout << "Size of locations " << fr.allLocations.size() << std::endl;
+    std::cout << "Size of desired " << fr.desiredLocations.size() << std::endl;
+
     // Create a vector of classes that a cs major takes
     std::vector<std::string> CSClasses = {"CS128", "CS124", "PHYS211", "MATH221", "RHET105", "MATH231"};
 
-    // Loop through all the desired locations and make edges for each class they do NOT share
     for (unsigned int i = 0; i < fr.desiredLocations.size(); i++) {
         for (unsigned int j = i + 1; j < fr.desiredLocations.size(); j++) {
             // count the number of classes for each location that are in the CSclasses vector
@@ -43,21 +46,21 @@ int main() {
             Node* nodeTwo = fr.desiredLocations[j];
             
             // Count number of classes in our first location
-            for (std::string className : nodeOne.desiredClasses) {
+            for (std::string className : nodeOne->desiredClasses) {
                 if (std::find(CSClasses.begin(), CSClasses.end(), className) != CSClasses.end()) {
                     nodeOneClassCount++;
                 }
             }
             
             // Count number of classes in our second location
-            for (std::string className : nodeTwo.desiredClasses) {
+            for (std::string className : nodeTwo->desiredClasses) {
                 if (std::find(CSClasses.begin(), CSClasses.end(), className) != CSClasses.end()) {
                     nodeTwoClassCount++;
                 }
             }
             // Count the number of same classes into sameClassCount 
-            for (std::string className : nodeOne.desiredClasses) {
-                if (std::find(nodeTwo.desiredClasses.begin(), nodeTwo.desiredClasses.end(), className) != nodeTwo.desiredClasses.end()) {
+            for (std::string className : nodeOne->desiredClasses) {
+                if (std::find(nodeTwo->desiredClasses.begin(), nodeTwo->desiredClasses.end(), className) != nodeTwo->desiredClasses.end()) {
                     sameClassCount++;
                 }
             }
@@ -71,6 +74,8 @@ int main() {
             nodeTwo -> weights.push_back(weight);
         }
     }
+
+/////////////////////
 
     // Loop through the CSClasses vector and loop through each node in the desiredLocations vector if the class is in the node's desiredClasses vector, then 
 
@@ -111,6 +116,4 @@ int main() {
     //         // add the weights according to the maps
     //     }
     // }
-
-
 }

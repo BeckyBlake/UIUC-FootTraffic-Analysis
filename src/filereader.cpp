@@ -32,9 +32,9 @@ Is its value in classLocs -1 or something greater than or equal to 0
 if(-1) add it to theRest vector
 else add it to desired and increment locations
 */
-FileReader::FileReader() {
+FileReader::FileReader(string targets_file) {
     //initialize isDesired 
-    initializeHelpers();
+    initializeHelpers(targets_file);
     
     //initialize important variables
     vector<string> row;
@@ -63,7 +63,16 @@ FileReader::FileReader() {
         Node* node;
         //if this if statement runs it means that we have moved onto the next location
         if(currIndex < allLocations.size() && locationName != allLocations.at(currIndex)->location) {
-            currIndex++;
+            // currIndex++;
+            //****************************************************
+            //THIS BIT OF CODE SEPARATES DESIRED AND ALL LOCATIONS
+            //****************************************************
+            if(allLocations.at(currIndex)->inDesVector) {
+                allLocations.pop_back();
+            }
+            else {
+                currIndex++;
+            }
         }
         //we have a new location, so we have to create new node
         if(currIndex == allLocations.size()) {
@@ -103,9 +112,9 @@ void FileReader::addClass(Node* node, string cName, int des) {
     }
 }
 
-void FileReader::initializeHelpers() {
+void FileReader::initializeHelpers(string targets_file) {
     string line;
-    fstream file("../targets.csv", ios::in);
+    fstream file(targets_file, ios::in);
     //repeat this loop while there are still lines left
     while(getline(file, line)) {
         //line now contains something like CS110 or something

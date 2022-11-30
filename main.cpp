@@ -22,7 +22,7 @@ int main() {
         for (int j = i + 1; j++) {
             Node& classeOne = classes[i];
             Node& classTwo = classes[j];
-            // N
+            
         }
     }
 

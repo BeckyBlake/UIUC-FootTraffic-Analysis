@@ -16,7 +16,7 @@ class FileReader {
         * of the desired classes and all other classes also held at that
         * location.
         */
-        FileReader();
+        FileReader(string targets_file);
 
         /**
         * FileReader destructor
@@ -28,7 +28,7 @@ class FileReader {
         * Initializes the isDesired map so that we can check whether or not
         * a class is desired
         */
-        void initializeHelpers();
+        void initializeHelpers(string targets_file);
 
         /**
         * Adds the class to its place in the location node and adds the node to
@@ -44,7 +44,7 @@ class FileReader {
         //Map used to check if a class is a desired class or not
         std::map<string, int> isDesired;
         
-        //vector containing pointers to all Nodes representing all locations
+        //vector containing pointers to Nodes representing all locations
         //in the csv file
         vector<Node*> allLocations;
         
