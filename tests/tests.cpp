@@ -22,20 +22,12 @@ TEST_CASE("file_reader_constructor_desired", "[weight=10][valgrind]") {
    }
 }
 
-// Use file reade the possible DESIRED classes that we seek
+// Test to ensure the locations no in allLocations don't have desired classes
 TEST_CASE("file_reader_constructor_not", "[weight=10][valgrind]") {
-    FileReader fr("../targets.csv");
-    // Desired list of classes
-    vector<string> targets{"CS128", "CS124", "PHYS211", "MATH221", "RHET105", "MATH231"};
+    FileReader fr("../test_classes.csv");
     for (auto node : fr.allLocations) {
         // Make sure the desired classes are in targets
-        if(node->desiredClasses.size() != 0) {
-            std::cout << node->location << "hmm" << std::endl;
-        }
         REQUIRE(node->desiredClasses.size() == 0);
-        
-        //REQUIRE(std::find(targets.begin(), targets.end(), node->name) != targets.end());
- 
    }
 }
 

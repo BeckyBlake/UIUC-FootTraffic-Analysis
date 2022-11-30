@@ -31,6 +31,8 @@ Is its value in classLocs -1 or something greater than or equal to 0
 
 if(-1) add it to theRest vector
 else add it to desired and increment locations
+
+Also, there are 114 unique locations
 */
 FileReader::FileReader(string targets_file) {
     //initialize isDesired 
@@ -39,7 +41,7 @@ FileReader::FileReader(string targets_file) {
     //initialize important variables
     vector<string> row;
     string line, col;
-    fstream file ("../cc-sorted-locations.csv", ios::in);
+    fstream file ("../cc-sorted-locations.txt", ios::in);
     //keeps track of the location we're currently looking at
     size_t currIndex = 0;
 
@@ -48,7 +50,7 @@ FileReader::FileReader(string targets_file) {
         row.clear();
         stringstream ss(line);
         //split on commas and store words in the row array
-        while(std::getline(ss, col, ',')) {
+        while(std::getline(ss, col, '\t')) {
             row.push_back(col);
         }
         //we want to skip the first row
@@ -84,6 +86,10 @@ FileReader::FileReader(string targets_file) {
         node = allLocations.at(currIndex);
 
         addClass(node, row.at(0), des);
+    }
+    //to see if the very last location had desired classes
+    if(allLocations.at(currIndex)->inDesVector) {
+        allLocations.pop_back();
     }
 }
 
