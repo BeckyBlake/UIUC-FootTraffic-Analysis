@@ -290,7 +290,6 @@ src/CMakeFiles/src.dir/filereader.cpp.o: ../src/filereader.cpp \
   /usr/include/c++/11/debug/safe_container.h \
   /usr/include/c++/11/debug/safe_iterator.h \
   /usr/include/c++/11/debug/safe_iterator.tcc \
-  ../src/disjointSets.h \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/ext/aligned_buffer.h \
@@ -305,6 +304,7 @@ src/CMakeFiles/src.dir/filereader.cpp.o: ../src/filereader.cpp \
   /usr/include/c++/11/debug/map \
   /usr/include/c++/11/debug/map.h \
   /usr/include/c++/11/debug/multimap.h \
+  ../src/disjointSets.h \
   /usr/include/c++/11/fstream \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/ios \

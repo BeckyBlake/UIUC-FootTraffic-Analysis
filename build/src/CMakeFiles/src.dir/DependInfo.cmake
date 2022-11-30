@@ -8,15 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/workspaces/CS225FinalProject/cs225-project/src/disjointSets.cpp" "src/CMakeFiles/src.dir/disjointSets.cpp.o" "gcc" "src/CMakeFiles/src.dir/disjointSets.cpp.o.d"
-  "/workspaces/CS225FinalProject/cs225-project/src/filereader.cpp" "src/CMakeFiles/src.dir/filereader.cpp.o" "gcc" "src/CMakeFiles/src.dir/filereader.cpp.o.d"
+  "/workspaces/cs225_fp/cs225-project/src/disjointSets.cpp" "src/CMakeFiles/src.dir/disjointSets.cpp.o" "gcc" "src/CMakeFiles/src.dir/disjointSets.cpp.o.d"
+  "/workspaces/cs225_fp/cs225-project/src/filereader.cpp" "src/CMakeFiles/src.dir/filereader.cpp.o" "gcc" "src/CMakeFiles/src.dir/filereader.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/workspaces/CS225FinalProject/cs225-project/build/lib/CMakeFiles/cs225.dir/DependInfo.cmake"
-  "/workspaces/CS225FinalProject/cs225-project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
-  "/workspaces/CS225FinalProject/cs225-project/build/lib/CMakeFiles/binarytree.dir/DependInfo.cmake"
+  "/workspaces/cs225_fp/cs225-project/build/lib/CMakeFiles/cs225.dir/DependInfo.cmake"
+  "/workspaces/cs225_fp/cs225-project/build/lib/CMakeFiles/lodepng.dir/DependInfo.cmake"
+  "/workspaces/cs225_fp/cs225-project/build/lib/CMakeFiles/binarytree.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
