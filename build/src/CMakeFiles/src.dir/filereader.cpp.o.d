@@ -180,7 +180,11 @@ src/CMakeFiles/src.dir/filereader.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/map \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/map.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/multimap.h \
+<<<<<<< HEAD
   /workspaces/cs225_fp/cs225-project/src/disjointSets.h \
+=======
+  /workspaces/CS225FinalProject/cs225-project/src/disjointSets.h \
+>>>>>>> e94b52e3d4efbd26d1a5a9e80681d593315a88cb
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/fstream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/istream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ios \
