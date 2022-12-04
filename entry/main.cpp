@@ -19,7 +19,7 @@ int main() {
     FileReader fr("../targets.csv");
 
     // Read the file to get the CS classes
-    //vector<Node> desired = fr.getClasses();   
+    // Vector<Node> desired = fr.getClasses();   
 
     // Printing out the classes to check making sure we get duplicates (assuming different locations)
     for(Node* n : fr.desiredLocations) {

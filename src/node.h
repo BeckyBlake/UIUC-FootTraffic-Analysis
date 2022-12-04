@@ -7,7 +7,6 @@
 using namespace std;
 
 struct Node {
-    std::string name;
     //location name
     std::string location;
     std::vector<Node*> neighbors;
