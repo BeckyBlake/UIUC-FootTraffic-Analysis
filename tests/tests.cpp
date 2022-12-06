@@ -177,3 +177,8 @@ TEST_CASE("graph_implementation", "[weight=10][valgrind]") {
 //     // initialize disjoint set
 //     fr.initializeTargets();
 //     REQUIRE(fr.dset.size(0) == 6);
+
+// TEST_CASE("dijkstra test", "[weight=10][valgrind]") {
+//     FileReader fr("../targets.csv");
+
+// }

@@ -11,6 +11,10 @@ struct Node {
     std::string location;
     std::vector<Node*> neighbors;
     std::vector<int> weights;
+    std::pair<float, float> coordinate;
+
+
+
     //vector of the classes in this location that we
     //care about
     std::vector<string> desiredClasses;

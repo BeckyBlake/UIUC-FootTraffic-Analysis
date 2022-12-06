@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrc.a CMakeFiles/src.dir/disjointSets.cpp.o CMakeFiles/src.dir/filereader.cpp.o CMakeFiles/src.dir/forceDirectedGraph.cpp.o
+/usr/bin/ranlib libsrc.a

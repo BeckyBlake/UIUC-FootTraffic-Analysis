@@ -1,12 +1,65 @@
-# Location of Files
-1. **cs225-project**
-    a) build
-        build contains all of the make and cmake files in order for our project to compile and run. 
-    b) entry
-        entry contains our **main.cpp** file where we use our other programs like file reader and disjointSets to get our data and process it as well. TO BE CONTINUED SINCE WE NEED TO WORK ON MAIN AGAIN
-    c) lib
-        UNTOUCHED MAINLY USED SINCE WE COPIED DOCKER I BELIEVE(??). WILL TOUCH UPON LATER
-    d)
+## Github Organization
+.devcontainer
+    ->devcontainer.json (DockerFile for compiling)
+
+
+cs225-project
+    ->build
+        ->contains all of the files need to operate make and cmake
+
+    ->entry
+        ->main.cpp (this is where all of our coding compilation takes place)
+
+    ->lib (ignore, mainly just from copying over so we could use Dockerfile)
+
+    ->src
+        ->CmakeLists.txt
+        ->disjointSets.cpp
+        ->disjointSets.h (disjoint set class)
+        ->filereader.cpp
+        ->filereader.h (filereader class)
+
+
+    ->tests
+        ->tests.cpp (main test file for test cases)
+
+    ->course-catalog.csv (contains our dataset)
+
+    ->targets.csv (classes we are considering as our target classes for schedules)
+
+    ->test_classes.csv (another set of classes we used for further testing)
+
+Dockerfile (just contains our Dockerfile)
+
+
+
+
+
+## Running Instructions
+# Compiling
+1. Enter DOCKERFILE
+2. Type "cd cs225-project" in terminal
+3. Type "cd build" in terminal
+4. Type "cmake .." in terminal
+
+## Running test cases
+1. Type "make" in terminal
+2. Run "./test" in terminal
+    **Testing individual cases**
+    Name of test cases and what it's purpose
+    a) file_reader_instantiation_works : checks to make sure the file reader properly initializes
+    b) no_repeat_locations_as_nodes : makes sure that if we inlcude a location, it's only once
+    c) locations_contain_at_least_one_class : makes sure that if we insert a location, it actually has a class stored in it
+    d) location_only_contains_desired_classes : makes sure that if we stored a class in location, it's a desired class
+    e) graph_implementation : runs and tests the graph implementation and makes sure that the locations are vertices and edges are class connections
+
+## Definition of data input and output
+# File reader
+1. File reader automatically uses a CSV of the classes and locations at UIUC
+2. When inputting into the file reader, you have parameters of another CSV file. This CSV file contains the classes that you wan to research
+3. The output is two vectors. One is called desiredLocations and one is called allLocations. desiredLocations is a vector which contains the locations of the classes we wanted in our dataset as well as which classes pertain to that location in another vector 
+
+# ADD MORE WHEN MORE GETS ADDED
 
 
 

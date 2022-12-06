@@ -9,6 +9,9 @@
 #include <iostream>
 using namespace std;
 
+//ctrl f then alt enter
+
+
 
 /* IMPORTANT THINGS TO NOTE FOR CSV FILE
 
@@ -127,6 +130,7 @@ void FileReader::initializeHelpers(string targets_file) {
         line.erase(std::remove(line.begin(), line.end(), '\r'), line.end());
         //indicate in isDesired that we want this class
         isDesired.insert({line, 1});
+        dclasses.push_back(line);
     }
 }
 

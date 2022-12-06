@@ -54,4 +54,6 @@ class FileReader {
 
         // disjoint set that represents all the classes in the targets vector
         DisjointSets dset;
+
+        vector<string> dclasses;
 };
