@@ -21,48 +21,65 @@ std::vector<Node*> dijkstra(int starting_index, FileReader& fr) {
     // initialize all distances from starting to infinity and all predecessors to null
     for (unsigned i = 0; i < fr.desiredLocations.size(); i++) {
         //big
-        distances[i] = 100000;
+        distances[i] = 1000000;
         predecessors[i] = NULL;
     }
 
     // the distance from the start to the start is 0 
     distances[starting_index] = 0;
 
-    std::vector<Node*> heap = fr.desiredLocations;
-    //used to keep track of nodes that are done
-    std::vector<Node*> discovered;
-    for (unsigned i = 0; i < heap.size(); i++) {
-        // find cheapest neighbor of current node
-        Node* current = heap[i];
-        //initialize min to contain the first weight
-        // std::cout << "current->weight size " << current->weights.size() << std::endl;
-        int min = current->weights[0];
-        int min_idx = 0;
-        for (unsigned j = 0; j < current->weights.size(); j++) {
-            if (current->weights[j] < min && current->weights[j] != 0) {
-                min = current->weights[j];
-                min_idx = j;
-            }
-        }
-        //initialize closest neighbor
-        Node* smallest_neighbor = current->neighbors[min_idx];
-        discovered.push_back(smallest_neighbor);
+    // this is my lazy version of a heap/priorityqueue
+    std::vector<std::pair<int, Node*>> heap;
 
+    //used to keep track of nodes that are done
+    std::vector<std::string> discovered;
+    
+    // place starting node into "heap"
+    heap.push_back({distances[starting_index], fr.desiredLocations[starting_index]});
+    
+
+    while (!heap.empty()) {
+        // find current node
+        Node* current = heap.at(0).second;
+        heap.erase(heap.begin());
+        // std::cout << "discovering " << current->location << std::endl;
+        discovered.push_back(current->location);
         for (unsigned j = 0; j < current->neighbors.size(); j++) {
             // if it is already discovered, continue
-            if (std::find(discovered.begin(), discovered.end(), current->neighbors[j]) != discovered.end()) { 
+            if (std::find(discovered.begin(), discovered.end(), current->neighbors[j]->location) != discovered.end()) { 
+                // std::cout << current->neighbors[j]->location << " is already discovered, continuing to next iteration" << std::endl;
                 continue;
             }
-            // std::cout << "made it here" << std::endl;
-            if (current->weights[j] + distances[i] < distances[j]) {
+            // find index of current node in distances vector
+            unsigned i;
+            for (i = 0; i < fr.desiredLocations.size(); i++) {
+                if (fr.desiredLocations.at(i) == current) {
+                    break;
+                }
+            }
+            unsigned neighbor_idx;
+            for (neighbor_idx = 0; neighbor_idx < fr.desiredLocations.size(); neighbor_idx++) {
+                if (fr.desiredLocations.at(neighbor_idx) == current->neighbors[j]) {
+                    break;
+                }
+            }
+            if (current->weights[j] + distances[i] < distances[neighbor_idx] && (current->weights[j]) != 0) {
                 // std::cout << "made it here" << std::endl;
-                distances[j] = current->weights[j] + distances[i];
-                predecessors[j] = current;
+                distances[neighbor_idx] = current->weights[j] + distances[i];
+                predecessors[neighbor_idx] = current;
+                
+                // insert into heap
+                
+                std::pair<int, Node*> pair = {distances[neighbor_idx], fr.desiredLocations[neighbor_idx]};
+                // std::cout << "pushing to the heap " << pair.second->location << " with a distance " << pair.first << std::endl;
+                heap.push_back(pair);
+                // sort the heap every time you insert
+                std::sort(heap.begin(), heap.end());
+
             }
         }
     }
     return predecessors;
-    // return std::vector<Node*>();
 }
 
 // Result of Dijksra's ----> you have a vector predecessors. The starting node is whatever is in desiredLocations[starting_index] and say you want to find the 
@@ -83,6 +100,7 @@ int main() {
     // Vector<Node> desired = fr.getClasses();   
 
     // Printing out the classes to check making sure we get duplicates (assuming different locations)
+    fr.desiredLocations.pop_back();
     for(Node* n : fr.desiredLocations) {
         std::cout << n->location << "'s classes: " << std::endl;
         for(string s : n->desiredClasses) {
@@ -137,7 +155,7 @@ int main() {
     }
 
 
-    // // Print out the neighbors and weights for each node
+    // Print out the neighbors and weights for each node
     // for (Node* node : fr.desiredLocations) {
     //     std::cout << node->location << "'s neighbors: " << std::endl;
     //     for (Node* neighbor : node->neighbors) {
@@ -150,19 +168,27 @@ int main() {
     //     std::cout << std::endl;
     // }
 
-    std::cout << "starting index is 0 which is location " << fr.desiredLocations[0]->location << std::endl;
-    std::cout << "let's say end target is 3 which is location " << fr.desiredLocations[3]->location << std::endl;
-    std::vector<Node*> path = dijkstra(0, fr);
+    // std::cout << "starting index is 0 which is location " << fr.desiredLocations[0]->location << std::endl;
+    // std::cout << "let's say end target is 4 which is location " << fr.desiredLocations[4]->location << std::endl;
+    // std::vector<Node*> path = dijkstra(0, fr);
 
     
-    std::cout << path.size() << std::endl;
-    std::cout << path[1] << std::endl;
-    for (unsigned i = 1; i < path.size(); i++) {
-        // std::cout << path[i]
-        std::cout << fr.desiredLocations[i]->location << "'s predecessor is " << path[i]->location << std::endl;
-    }
-    Node* starting = fr.desiredLocations[0];
-    Node* current_predecessor = path[3];
+    // std::cout << path.size() << std::endl;
+    // std::cout << path[0] << std::endl;
+    // std::cout << path[1] << std::endl;
+    // for (unsigned i = 0; i < path.size(); i++) {
+    //     // std::cout << path[i]
+    //     if (path[i] == NULL) {
+    //         std::cout << fr.desiredLocations[i]->location << "'s predecessor is null" << std::endl;
+    //     } else {
+    //         std::cout << fr.desiredLocations[i]->location << "'s predecessor is " << path[i]->location << std::endl;
+    //     }
+    // }
+    // Node* starting = fr.desiredLocations[0];
+    // Node* current_predecessor = path[4];
+
+    // std::cout << "path from " << starting->location << " to " << fr.desiredLocations[4]->location << ": " << std::endl;
+    // std::cout << fr.desiredLocations[4]->location << std::endl;
     // while (current_predecessor->location != starting->location) {
     //     std::cout << current_predecessor->location << std::endl;
     //     // find index of current predecessor
@@ -174,6 +200,7 @@ int main() {
     //     }
     //     current_predecessor = path[i];
     // }
+    // std::cout << current_predecessor->location << std::endl;
 
 
     //////// Force directed graph ////////
