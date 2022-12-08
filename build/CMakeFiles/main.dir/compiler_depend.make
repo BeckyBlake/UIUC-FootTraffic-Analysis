@@ -242,8 +242,11 @@ CMakeFiles/main.dir/entry/main.cpp.o: ../entry/main.cpp \
   /usr/include/c++/11/debug/map \
   /usr/include/c++/11/debug/map.h \
   /usr/include/c++/11/debug/multimap.h \
-  ../src/forceDirectedGraph.h
+  ../src/forceDirectedGraph.h \
+  ../src/heap.h
 
+
+../src/heap.h:
 
 /usr/include/c++/11/debug/map.h:
 

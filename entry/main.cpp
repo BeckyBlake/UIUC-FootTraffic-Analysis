@@ -7,6 +7,7 @@
 #include "filereader.h"
 #include "forceDirectedGraph.h"
 #include "node.h"
+#include "heap.h"
 
 using namespace std;
 
@@ -29,19 +30,29 @@ std::vector<Node*> dijkstra(int starting_index, FileReader& fr) {
     distances[starting_index] = 0;
 
     // this is my lazy version of a heap/priorityqueue
-    std::vector<std::pair<int, Node*>> heap;
+    // std::vector<std::pair<int, Node*>> heap;
+
+    // std::vector<std::pair<int, Node*>> v;
+    // for (unsigned i = 0; i < fr.desiredLocations.size(); i++) {
+    //     std::pair<int, Node*>> pair = {distances[i], fr.desiredLocations[i]};
+    //     v.push_back(pair);
+    // }
+
+    // declare heap
+    heap pqueue;
 
     //used to keep track of nodes that are done
     std::vector<std::string> discovered;
     
     // place starting node into "heap"
-    heap.push_back({distances[starting_index], fr.desiredLocations[starting_index]});
+    pqueue.push({distances[starting_index], fr.desiredLocations[starting_index]});
     
 
-    while (!heap.empty()) {
+    while (!pqueue.empty()) {
         // find current node
-        Node* current = heap.at(0).second;
-        heap.erase(heap.begin());
+
+        Node* current = pqueue.peek().second;
+        pqueue.pop();
         // std::cout << "discovering " << current->location << std::endl;
         discovered.push_back(current->location);
         for (unsigned j = 0; j < current->neighbors.size(); j++) {
@@ -50,7 +61,7 @@ std::vector<Node*> dijkstra(int starting_index, FileReader& fr) {
                 // std::cout << current->neighbors[j]->location << " is already discovered, continuing to next iteration" << std::endl;
                 continue;
             }
-            // find index of current node in distances vector
+            //find index of current node in distances vector
             unsigned i;
             for (i = 0; i < fr.desiredLocations.size(); i++) {
                 if (fr.desiredLocations.at(i) == current) {
@@ -72,9 +83,7 @@ std::vector<Node*> dijkstra(int starting_index, FileReader& fr) {
                 
                 std::pair<int, Node*> pair = {distances[neighbor_idx], fr.desiredLocations[neighbor_idx]};
                 // std::cout << "pushing to the heap " << pair.second->location << " with a distance " << pair.first << std::endl;
-                heap.push_back(pair);
-                // sort the heap every time you insert
-                std::sort(heap.begin(), heap.end());
+                pqueue.push(pair);
 
             }
         }
@@ -168,24 +177,24 @@ int main() {
     //     std::cout << std::endl;
     // }
 
-    // std::cout << "starting index is 0 which is location " << fr.desiredLocations[0]->location << std::endl;
-    // std::cout << "let's say end target is 4 which is location " << fr.desiredLocations[4]->location << std::endl;
-    // std::vector<Node*> path = dijkstra(0, fr);
+    std::cout << "starting index is 0 which is location " << fr.desiredLocations[0]->location << std::endl;
+    std::cout << "let's say end target is 4 which is location " << fr.desiredLocations[4]->location << std::endl;
+    std::vector<Node*> path = dijkstra(0, fr);
 
     
-    // std::cout << path.size() << std::endl;
-    // std::cout << path[0] << std::endl;
-    // std::cout << path[1] << std::endl;
-    // for (unsigned i = 0; i < path.size(); i++) {
-    //     // std::cout << path[i]
-    //     if (path[i] == NULL) {
-    //         std::cout << fr.desiredLocations[i]->location << "'s predecessor is null" << std::endl;
-    //     } else {
-    //         std::cout << fr.desiredLocations[i]->location << "'s predecessor is " << path[i]->location << std::endl;
-    //     }
-    // }
-    // Node* starting = fr.desiredLocations[0];
-    // Node* current_predecessor = path[4];
+    std::cout << path.size() << std::endl;
+    std::cout << path[0] << std::endl;
+    std::cout << path[1] << std::endl;
+    for (unsigned i = 0; i < path.size(); i++) {
+        // std::cout << path[i]
+        if (path[i] == NULL) {
+            std::cout << fr.desiredLocations[i]->location << "'s predecessor is null" << std::endl;
+        } else {
+            std::cout << fr.desiredLocations[i]->location << "'s predecessor is " << path[i]->location << std::endl;
+        }
+    }
+    Node* starting = fr.desiredLocations[0];
+    Node* current_predecessor = path[4];
 
     // std::cout << "path from " << starting->location << " to " << fr.desiredLocations[4]->location << ": " << std::endl;
     // std::cout << fr.desiredLocations[4]->location << std::endl;

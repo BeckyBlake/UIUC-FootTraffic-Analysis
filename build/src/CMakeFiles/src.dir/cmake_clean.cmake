@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/filereader.cpp.o.d"
   "CMakeFiles/src.dir/forceDirectedGraph.cpp.o"
   "CMakeFiles/src.dir/forceDirectedGraph.cpp.o.d"
+  "CMakeFiles/src.dir/heap.cpp.o"
+  "CMakeFiles/src.dir/heap.cpp.o.d"
   "libsrc.a"
   "libsrc.pdb"
 )

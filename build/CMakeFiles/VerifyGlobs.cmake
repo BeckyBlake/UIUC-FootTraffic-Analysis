@@ -49,6 +49,7 @@ set(OLD_GLOB
   "/workspaces/Desktop/225/cs225-project/src/disjointSets.cpp"
   "/workspaces/Desktop/225/cs225-project/src/filereader.cpp"
   "/workspaces/Desktop/225/cs225-project/src/forceDirectedGraph.cpp"
+  "/workspaces/Desktop/225/cs225-project/src/heap.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

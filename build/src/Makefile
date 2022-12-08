@@ -203,6 +203,30 @@ forceDirectedGraph.cpp.s:
 	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/forceDirectedGraph.cpp.s
 .PHONY : forceDirectedGraph.cpp.s
 
+heap.o: heap.cpp.o
+.PHONY : heap.o
+
+# target to build an object file
+heap.cpp.o:
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/heap.cpp.o
+.PHONY : heap.cpp.o
+
+heap.i: heap.cpp.i
+.PHONY : heap.i
+
+# target to preprocess a source file
+heap.cpp.i:
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/heap.cpp.i
+.PHONY : heap.cpp.i
+
+heap.s: heap.cpp.s
+.PHONY : heap.s
+
+# target to generate assembly for a file
+heap.cpp.s:
+	cd /workspaces/Desktop/225/cs225-project/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/heap.cpp.s
+.PHONY : heap.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -221,6 +245,9 @@ help:
 	@echo "... forceDirectedGraph.o"
 	@echo "... forceDirectedGraph.i"
 	@echo "... forceDirectedGraph.s"
+	@echo "... heap.o"
+	@echo "... heap.i"
+	@echo "... heap.s"
 .PHONY : help
 
 
