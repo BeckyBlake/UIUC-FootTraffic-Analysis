@@ -14,16 +14,23 @@ cs225-project
 
     ->src
         ->CmakeLists.txt
-        ->disjointSets.cpp
-        ->disjointSets.h (disjoint set class)
         ->filereader.cpp
         ->filereader.h (filereader class)
+        ->forceDirectedGraph.cpp(force drawing class)
+        ->forceDirectedGraph.h
+        ->heap.cpp (heap used for dijkstra's)
+        ->heap.h
+        ->node.h (our node class)
 
 
     ->tests
         ->tests.cpp (main test file for test cases)
 
     ->course-catalog.csv (contains our dataset)
+
+    ->README.md
+
+    ->results.md
 
     ->targets.csv (classes we are considering as our target classes for schedules)
 
@@ -58,12 +65,14 @@ Dockerfile (just contains our Dockerfile)
 # File reader
 1. File reader automatically uses a CSV of the classes and locations at UIUC
 2. When inputting into the file reader, you have parameters of another CSV file. This CSV file contains the classes that you wan to research
-3. The output is two vectors. One is called desiredLocations and one is called allLocations. desiredLocations is a vector which contains the locations of the classes we wanted in our dataset as well as which classes pertain to that location in another vector 
+3. The output is two vectors. One is called desiredLocations and one is called allLocations. desiredLocations is a vector which contains the locations of the classes we wanted in our dataset as well as which classes pertain to that location in another vector
+4. The file reader output location is to the terminal
 
 # BFS
 1. While this isn't an exact function, we use it to do a graph traversal
 2. You input a file reader and it is going to make connections between class locations
 3. In the end, it connects all classes that you would travel to
+4. The output location is the test cases where it'll say test case passed if the graph implementation was done correctly
 
 # Dijkstra's
 1. Input a integer that signifies the starting location, you also input a file reader
@@ -71,12 +80,14 @@ Dockerfile (just contains our Dockerfile)
     - Starting point is chosen based on int inputted at beginning
 3. From there it runs Dijkstra's like it would for any class
 4. In the end it returns a vector of nodes which if you follow the nodes it shows the path from one class to another where you run into the least amount of kids
+5. The output location is whereever Dijkstra's is called. So, if you call it in main, the output will be main.
 
 # Force Graph Drawing
 1. The force graph drawing takes in the desired locations made by the file reader as well as the weight between the edges
 2. To visualize it, think of the force between two electrons using F = kq1q2/r (not our exact representation but helpful)
 3. The bigger the weight of the edges (our force), then the closer the locations are placed next to each other
 4. The output is a graph that now separates locations further away based on weights and common occurrences between classes
+5. The force directed graph drawing is outputted in "cs225-project->build->graph.png".
 
 
 

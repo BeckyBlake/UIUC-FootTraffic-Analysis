@@ -67,37 +67,35 @@ FileReader::FileReader(string targets_file) {
         //create a node pointer to store the node we want to alter
         Node* node;
         //if this if statement runs it means that we have moved onto the next location
-        if(currIndex < allLocations.size() && locationName != allLocations.at(currIndex)->location) {
-            // currIndex++;
-            //****************************************************
-            //THIS BIT OF CODE SEPARATES DESIRED AND ALL LOCATIONS
-            //****************************************************
-            if(allLocations.at(currIndex)->inDesVector) {
-                allLocations.pop_back();
+        if(currIndex < otherLocations.size() && locationName != otherLocations.at(currIndex)->location) {
+            //if this contains a desired class, we don't want it in the otherLocations vector
+            if(otherLocations.at(currIndex)->inDesVector) {
+                otherLocations.pop_back();
             }
             else {
                 currIndex++;
             }
         }
         //we have a new location, so we have to create new node
-        if(currIndex == allLocations.size()) {
+        if(currIndex == otherLocations.size()) {
             node = new Node();
             node->location = locationName;
-            allLocations.push_back(node);
+            otherLocations.push_back(node);
         }
         //get the current location
-        node = allLocations.at(currIndex);
+        node = otherLocations.at(currIndex);
 
         addClass(node, row.at(0), des);
     }
     //to see if the very last location had desired classes
-    if(allLocations.at(currIndex)->inDesVector) {
-        allLocations.pop_back();
+    if(otherLocations.at(currIndex)->inDesVector) {
+        otherLocations.pop_back();
     }
 }
 
 FileReader::~FileReader() {
-    for(Node* n : allLocations) { delete n; }
+    for(Node* n : otherLocations) { delete n; }
+    for(Node* n : desiredLocations) { delete n; }
 }
 
 void FileReader::addClass(Node* node, string cName, int des) {
@@ -131,13 +129,5 @@ void FileReader::initializeHelpers(string targets_file) {
         //indicate in isDesired that we want this class
         isDesired.insert({line, 1});
         dclasses.push_back(line);
-    }
-}
-
-void FileReader::initializeTargets() {
-    // initialize all the elements to be in 1 set
-    dset.addelements(6);
-    for (unsigned i = 0; i < 5; i++) {
-        dset.setunion(i, i+1);
     }
 }

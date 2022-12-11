@@ -14,7 +14,7 @@ TEST_CASE("file_reader_instantiation_works", "[weight=10][valgrind]") {
     // Create filereader object
     FileReader fr("../targets.csv");
     // pass test case if fr exists
-    REQUIRE(fr.allLocations.size() >= 0);
+    REQUIRE(fr.otherLocations.size() >= 0);
 }
 
 using namespace std;

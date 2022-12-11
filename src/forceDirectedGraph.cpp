@@ -6,6 +6,8 @@
 #include <string>
 #include <algorithm>
 #include <cmath>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 using namespace cs225;
@@ -18,6 +20,7 @@ ForceDirectedGraph::ForceDirectedGraph(vector<Node*>& nodes) {
     forces.resize(graphNodes.size());
     calculatePositions(0, 1000);
 }
+
 
 void ForceDirectedGraph::randomizeLocations(int size) {
     for (unsigned i = 0; i < graphNodes.size(); i++) {
@@ -114,26 +117,31 @@ void ForceDirectedGraph::nudge(Node* n, std::pair<float, float> force) {
 }
 
 
-void ForceDirectedGraph::drawGraph(std::string fileName) {
+void ForceDirectedGraph::drawGraph(std::string graphFileName, std::string coordFileName) {
     //number to scale the coordinates by to make the graph bigger
-    int pixelScale = 10;
     
+    // Create and open a text file
+    ofstream coordsFile(coordFileName);
+    coordsFile << "Max x: " << maxX-minX << '\n';
+    coordsFile << "Max y: " << maxY-minY << '\n';
+
     //create an image for the graph (background already white)
-    PNG graph(pixelScale*(maxX-minX), pixelScale*(maxY-minY));
+    PNG graph(maxX-minX, maxY-minY);
     //iterate through every node we have
     for(Node* node : graphNodes) {
-        drawNode(node->coordinate, graph, pixelScale);
+        drawNode(node->coordinate, graph);
+        coordsFile << node->location << "'s coords: " << node->coordinate.first - minX << ", " << node->coordinate.second - minY << '\n';
     }
     
-    graph.writeToFile(fileName);
+    coordsFile.close();
+    graph.writeToFile(graphFileName);
 }
 
-void ForceDirectedGraph::drawNode(std::pair<float, float> coords, PNG& graph, int scale) {
-    int nodeSize = 3*scale;
+void ForceDirectedGraph::drawNode(std::pair<float, float> coords, PNG& graph) {
+    int nodeSize = 3;
     
-    int xCoord = scale*(int(coords.first) - int(minX));
-    int yCoord = scale*(int(coords.second) - int(minY));
-
+    int xCoord = int(coords.first) - int(minX);
+    int yCoord = int(coords.second) - int(minY);
     //get the starting coordinates for x and y
     //we subtract the min values because we don't want negative coords if coords are negative
     int startingX = std::max(xCoord - nodeSize/2, 0);
@@ -142,14 +150,13 @@ void ForceDirectedGraph::drawNode(std::pair<float, float> coords, PNG& graph, in
     HSLAPixel black(0,0,0);
 
     for(int x = startingX; x < startingX + nodeSize; x++) {
-        
-        
         for(int y = startingY; y < startingY + nodeSize; y++) {
-            int yesColorCol = nodeSize/2
+            int tempX = x;
+            int tempY = y;
             
-            graph.getPixel(x,y) = black;
+            if(unsigned(x) >= graph.width()) { tempX = int(graph.width()) - 1; }
+            if(unsigned(y) >= graph.height()) { tempY = int(graph.height()) - 1; }
+            graph.getPixel(tempX, tempY) = black;
         }
     }
-
-
 }

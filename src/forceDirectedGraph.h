@@ -18,7 +18,7 @@ class ForceDirectedGraph {
         * Draws the graph and stores it in a png with the given name 
         * @param fileName name you want to the PNG to have
         */
-        void drawGraph(std::string fileName);
+        void drawGraph(std::string graphFileName, std::string coordFileName);
 
     private:    
         /**
@@ -49,7 +49,7 @@ class ForceDirectedGraph {
 
         vector<Node*> graphNodes;
 
-        void drawNode(std::pair<float, float> coords, PNG& graph, int scale);
+        void drawNode(std::pair<float, float> coords, PNG& graph);
 
         //variables used for drawing the graph
         float maxX = 0;

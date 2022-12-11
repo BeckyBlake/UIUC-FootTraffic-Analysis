@@ -1,7 +1,6 @@
 #pragma once
 
 #include "node.h"
-#include "disjointSets.h"
 #include <vector>
 #include <string>
 #include <map>
@@ -46,14 +45,11 @@ class FileReader {
         
         //vector containing pointers to Nodes representing all locations
         //in the csv file
-        vector<Node*> allLocations;
+        vector<Node*> otherLocations;
         
         //vector containing pointers to only Nodes representing locations with
         //desired classes
         vector<Node*> desiredLocations;
-
-        // disjoint set that represents all the classes in the targets vector
-        DisjointSets dset;
 
         vector<string> dclasses;
 };
