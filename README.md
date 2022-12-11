@@ -41,6 +41,7 @@ Dockerfile (just contains our Dockerfile)
 2. Type "cd cs225-project" in terminal
 3. Type "cd build" in terminal
 4. Type "cmake .." in terminal
+5. Type "./main" in terminal
 
 ## Running test cases
 1. Type "make" in terminal
@@ -59,17 +60,28 @@ Dockerfile (just contains our Dockerfile)
 2. When inputting into the file reader, you have parameters of another CSV file. This CSV file contains the classes that you wan to research
 3. The output is two vectors. One is called desiredLocations and one is called allLocations. desiredLocations is a vector which contains the locations of the classes we wanted in our dataset as well as which classes pertain to that location in another vector 
 
-# ADD MORE WHEN MORE GETS ADDED
+# BFS
+1. While this isn't an exact function, we use it to do a graph traversal
+2. You input a file reader and it is going to make connections between class locations
+3. In the end, it connects all classes that you would travel to
+
+# Dijkstra's
+1. Input a integer that signifies the starting location, you also input a file reader
+2. Using the file reader, it extracts the class location along with the edges between the classes
+    - Starting point is chosen based on int inputted at beginning
+3. From there it runs Dijkstra's like it would for any class
+4. In the end it returns a vector of nodes which if you follow the nodes it shows the path from one class to another where you run into the least amount of kids
+
+# Force Graph Drawing
+1. The force graph drawing takes in the desired locations made by the file reader as well as the weight between the edges
+2. To visualize it, think of the force between two electrons using F = kq1q2/r (not our exact representation but helpful)
+3. The bigger the weight of the edges (our force), then the closer the locations are placed next to each other
+4. The output is a graph that now separates locations further away based on weights and common occurrences between classes
 
 
 
-
-
-
-
-
+## Team Contract
 # cs225_project
-# Team Contract
 
 ## Communication
 1. **Team Meetings** 
