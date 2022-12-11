@@ -103,7 +103,7 @@ int main() {
 
     dset.addelements(5);
 
-    FileReader fr("../test_classes.csv");
+    FileReader fr("../targets.csv");
 
     // Read the file to get the CS classes
     // Vector<Node> desired = fr.getClasses();   
@@ -118,12 +118,13 @@ int main() {
         std::cout << '\n';
     }
 
-    std::cout << "Size of locations " << fr.allLocations.size() << std::endl;
-    std::cout << "Size of desired " << fr.desiredLocations.size() << std::endl;
+    //std::cout << "Size of locations " << fr.allLocations.size() << std::endl;
+    //std::cout << "Size of desired " << fr.desiredLocations.size() << std::endl;
 
-    // Create a vector of classes that is contained in the desired csv file
+    // Create a vector of classes that is contained in the desired txt file
     std::vector<std::string> CSClasses = fr.dclasses;
 
+    //iterate through every location
     for (unsigned int i = 0; i < fr.desiredLocations.size(); i++) {
         for (unsigned int j = i + 1; j < fr.desiredLocations.size(); j++) {
             // count the number of classes for each location that are in the CSclasses vector
@@ -213,7 +214,8 @@ int main() {
 
 
     //////// Force directed graph ////////
-    // ForceDirectedGraph fdg = ForceDirectedGraph(fr.desiredLocations);
+    ForceDirectedGraph fdg = ForceDirectedGraph(fr.desiredLocations);
+    fdg.drawGraph("graph.png");
 
     return 0;
 /////////////////////

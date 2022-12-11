@@ -1,24 +1,28 @@
 #include "node.h"
 #include "forceDirectedGraph.h"
+#include "../lib/cs225/PNG.h"
+#include "../lib/cs225/HSLAPixel.h"
 #include <vector>
 #include <string>
 #include <algorithm>
 #include <cmath>
 
 using namespace std;
+using namespace cs225;
 
 
 ForceDirectedGraph::ForceDirectedGraph(vector<Node*>& nodes) {
-    randomizeLocations(nodes);
+    graphNodes = nodes;
+    randomizeLocations(100);
     
-    forces.resize(nodes.size());
-    calculatePositions(nodes, 0, 1000);
+    forces.resize(graphNodes.size());
+    calculatePositions(0, 1000);
 }
 
-void ForceDirectedGraph::randomizeLocations(vector<Node*>& nodes) {
-    for (unsigned i = 0; i < nodes.size(); i++) {
-        nodes[i]->coordinate.first = i;
-        nodes[i]->coordinate.second = i;
+void ForceDirectedGraph::randomizeLocations(int size) {
+    for (unsigned i = 0; i < graphNodes.size(); i++) {
+        graphNodes[i]->coordinate.first = rand()%size;
+        graphNodes[i]->coordinate.second = rand()%size;
     }
 }
 
@@ -26,7 +30,7 @@ float ForceDirectedGraph::magnitude(std::pair<float, float> p) {
     return sqrt(p.first*p.first + p.second * p.second);
 }
 
-void ForceDirectedGraph::calculatePositions(vector<Node*> nodes, float epsilon, int maxIterations) {
+void ForceDirectedGraph::calculatePositions(float epsilon, int maxIterations) {
     //set variable to indicate the number of iterations we have gone through
     int t = 1;
     float maxForce = epsilon + 1;
@@ -35,11 +39,13 @@ void ForceDirectedGraph::calculatePositions(vector<Node*> nodes, float epsilon, 
         //reset maxForce
         maxForce = 0;
         //iterate through each node and calculate the force for it
-        for(unsigned i = 0; i < nodes.size(); i++) {
+        for(unsigned i = 0; i < graphNodes.size(); i++) {
             //calculate the force for this node 
             pair<float, float> force;
-            force.first = calculateAttractiveForce(nodes.at(i)).first - calculateRepulsiveForce(nodes.at(i)).first;
-            force.second = calculateAttractiveForce(nodes.at(i)).second - calculateRepulsiveForce(nodes.at(i)).second;
+            pair<float, float> attractive = calculateAttractiveForce(graphNodes.at(i));
+            pair<float, float> repulsive = calculateRepulsiveForce(graphNodes.at(i));
+            force.first = attractive.first - repulsive.first;
+            force.second = attractive.second - repulsive.second;
             //get the magnitude for this force
             float mag = magnitude(force);
             //update maxForce if necessary
@@ -49,7 +55,7 @@ void ForceDirectedGraph::calculatePositions(vector<Node*> nodes, float epsilon, 
         }
         //move the node's position according to the force acting on it
         for(unsigned j = 0; j < forces.size(); j++) {
-            nudge(nodes.at(j), forces.at(j));
+            nudge(graphNodes.at(j), forces.at(j));
         }
 
         t++;
@@ -72,14 +78,17 @@ pair<float, float> ForceDirectedGraph::calculateAttractiveForce(Node* currNode) 
 }
 
 pair<float, float> ForceDirectedGraph::calculateRepulsiveForce(Node* currNode) {
-    // Loop through all nodes in the graph
+    //the strength with which nodes push each other away
+    int strength = 10;
+    
+    // Loop through all graphNodes in the graph
     pair<float, float> sumRepulsiveForces = {0, 0};
     for (unsigned i = 0; i < currNode->neighbors.size(); i++) {
         // Calculate the euclidean distance between currNode and neighbor
         float distance = sqrt(pow(currNode->coordinate.first - currNode->neighbors[i]->coordinate.first, 2) + pow(currNode->coordinate.second - currNode->neighbors[i]->coordinate.second, 2));   
         // calculate a direction vector from neighbor to currNode
         pair<float, float> direction = {currNode->coordinate.first - currNode->neighbors[i]->coordinate.first, currNode->coordinate.second - currNode->neighbors[i]->coordinate.second};
-        pair<float, float> repulsiveForce = {direction.first * 1 / distance, direction.second * 1 / distance};
+        pair<float, float> repulsiveForce = {direction.first * strength / distance, direction.second * strength / distance};
         sumRepulsiveForces = {sumRepulsiveForces.first + repulsiveForce.first, sumRepulsiveForces.second + repulsiveForce.second};
     }
     return sumRepulsiveForces;
@@ -89,4 +98,58 @@ void ForceDirectedGraph::nudge(Node* n, std::pair<float, float> force) {
     //update the position of the node
     n->coordinate.first += force.first;
     n->coordinate.second += force.second;
+
+    if(int(n->coordinate.first) < minX) {
+        minX = int(n->coordinate.first);
+    }
+    if(int(n->coordinate.first) > maxX) {
+        maxX = int(n->coordinate.first);
+    }
+    if(int(n->coordinate.second) < minY) {
+        minY = int(n->coordinate.second);
+    }
+    if(int(n->coordinate.second) > maxY) {
+        maxY = int(n->coordinate.second);
+    }
+}
+
+
+void ForceDirectedGraph::drawGraph(std::string fileName) {
+    //number to scale the coordinates by to make the graph bigger
+    int pixelScale = 10;
+    
+    //create an image for the graph (background already white)
+    PNG graph(pixelScale*(maxX-minX), pixelScale*(maxY-minY));
+    //iterate through every node we have
+    for(Node* node : graphNodes) {
+        drawNode(node->coordinate, graph, pixelScale);
+    }
+    
+    graph.writeToFile(fileName);
+}
+
+void ForceDirectedGraph::drawNode(std::pair<float, float> coords, PNG& graph, int scale) {
+    int nodeSize = 3*scale;
+    
+    int xCoord = scale*(int(coords.first) - int(minX));
+    int yCoord = scale*(int(coords.second) - int(minY));
+
+    //get the starting coordinates for x and y
+    //we subtract the min values because we don't want negative coords if coords are negative
+    int startingX = std::max(xCoord - nodeSize/2, 0);
+    int startingY = std::max(yCoord - nodeSize/2, 0);
+
+    HSLAPixel black(0,0,0);
+
+    for(int x = startingX; x < startingX + nodeSize; x++) {
+        
+        
+        for(int y = startingY; y < startingY + nodeSize; y++) {
+            int yesColorCol = nodeSize/2
+            
+            graph.getPixel(x,y) = black;
+        }
+    }
+
+
 }

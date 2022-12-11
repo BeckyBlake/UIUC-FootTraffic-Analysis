@@ -1,7 +1,10 @@
 #include "node.h"
+#include "../lib/cs225/PNG.h"
+#include "../lib/cs225/HSLAPixel.h"
 #include <vector>
 
 using namespace std;
+using namespace cs225;
 
 class ForceDirectedGraph {
     public:
@@ -11,6 +14,11 @@ class ForceDirectedGraph {
         */
         ForceDirectedGraph(vector<Node*>& nodes);
         
+        /**
+        * Draws the graph and stores it in a png with the given name 
+        * @param fileName name you want to the PNG to have
+        */
+        void drawGraph(std::string fileName);
 
     private:    
         /**
@@ -23,7 +31,7 @@ class ForceDirectedGraph {
         * @param maxIterations the max iterations we will go through before saying good enough
         * @return nothing, the new positions will be stored within the nodes themselves
         */
-        void calculatePositions(vector<Node*> nodes, float epsilon, int maxIterations);
+        void calculatePositions(float epsilon, int maxIterations);
 
         //calculate the attractive force between two nodes
         pair<float, float> calculateAttractiveForce(Node* currNode);
@@ -35,9 +43,19 @@ class ForceDirectedGraph {
 
         vector<pair<float, float>> forces;
 
-        void randomizeLocations(vector<Node*>& nodes);
+        void randomizeLocations(int size);
 
         float magnitude(std::pair<float, float> p);
+
+        vector<Node*> graphNodes;
+
+        void drawNode(std::pair<float, float> coords, PNG& graph, int scale);
+
+        //variables used for drawing the graph
+        float maxX = 0;
+        float maxY = 0;
+        float minY = 0;
+        float minX = 0;
 };
 
 
